@@ -1,0 +1,57 @@
+# נקודה בזמן — Generative Engine Optimization Map
+
+> A בריאות ורפואה business.
+
+---
+
+## Pages
+
+### דף הבית
+https://-627e2267.zappy5.app
+נקודה בזמן מציעה טיפולים מתקדמים לבעיות פרוסטטה ושלפוחית. פתרונות טבעיים ויעילים לטיפול בהגדלת פרוסטטה שפירה ושלפוחית רגיזה. צור קשר עכשיו!
+
+### טיפולים
+https://-627e2267.zappy5.app/treatments
+גלה את מגוון הטיפולים המתקדמים של נקודה בזמן לבעיות פרוסטטה ושלפוחית. טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס כרונית.
+
+### אודות
+https://-627e2267.zappy5.app/about
+הכירו את נקודה בזמן - מרכז רפואי מוביל לטיפול בבעיות פרוסטטה ושלפוחית. צוות מקצועי, טיפולים מתקדמים וגישה אישית לכל מטופל.
+
+### צור קשר
+https://-627e2267.zappy5.app/contact
+צור קשר עם נקודה בזמן לקביעת פגישת ייעוץ בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס. נשמח לעזור ולענות על כל שאלה.
+
+## Legal & Policy
+
+### Privacy Policy
+https://-627e2267.zappy5.app/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://-627e2267.zappy5.app/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://-627e2267.zappy5.app/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About נקודה בזמן
+נקודה בזמן is a business in the בריאות ורפואה industry.
+
+## Target Audience
+אנשים עם בעיות פרוסטטה ובעיות שלפוחית
+
+## Industry
+בריאות ורפואה
+
+---
+
+# Additional Resources
+
+- **Sitemap**: https://-627e2267.zappy5.app/sitemap.xml
+- **Robots.txt**: https://-627e2267.zappy5.app/robots.txt
