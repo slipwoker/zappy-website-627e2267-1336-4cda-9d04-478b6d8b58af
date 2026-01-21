@@ -1,54 +1,64 @@
-# Business — Generative Engine Optimization Map
+# נקודה בזמן — Generative Engine Optimization Map
+
+> A בריאות ורפואה business.
 
 ---
 
 ## Pages
 
 ### טיפול מתקדם בבעיות פרוסטטה ושלפוחית — נקודה בזמן
-https://example.com
+https://nekuda-bazman.zappy5.app
 נקודה בזמן מציעה טיפולים מתקדמים לבעיות פרוסטטה ושלפוחית. פתרונות טבעיים ויעילים לטיפול בהגדלת פרוסטטה שפירה ושלפוחית רגיזה. צור קשר עכשיו!
 
 ### טיפולים מקצועיים לפרוסטטה ושלפוחית — נקודה בזמן
-https://example.com/treatments
+https://nekuda-bazman.zappy5.app/treatments
 גלה את מגוון הטיפולים המתקדמים של נקודה בזמן לבעיות פרוסטטה ושלפוחית. טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס כרונית.
 
 ### Page
-https://example.com/recommendations
+https://nekuda-bazman.zappy5.app/recommendations
 
 ### אודות נקודה בזמן — מומחים בבריאות פרוסטטה ושלפוחית
-https://example.com/about
+https://nekuda-bazman.zappy5.app/about
 הכירו את נקודה בזמן - מרכז רפואי מוביל לטיפול בבעיות פרוסטטה ושלפוחית. צוות מקצועי, טיפולים מתקדמים וגישה אישית לכל מטופל.
 
 ### צור קשר עם נקודה בזמן — קבע פגישת ייעוץ
-https://example.com/contact
+https://nekuda-bazman.zappy5.app/contact
 צור קשר עם נקודה בזמן לקביעת פגישת ייעוץ בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס. נשמח לעזור ולענות על כל שאלה.
 
 ### צור קשר והגעה | נקודה בזמן
-https://example.com/contact-location
+https://nekuda-bazman.zappy5.app/contact-location
 צור קשר עם קליניקת נקודה בזמן. הוראות הגעה מפורטות, מפה, קווי אוטובוס, רכבת וחניונים באזור לטיפול בבעיות פרוסטטה ושלפוחית.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://nekuda-bazman.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://nekuda-bazman.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://nekuda-bazman.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About נקודה בזמן
+נקודה בזמן is a business in the בריאות ורפואה industry.
+
+## Target Audience
+אנשים עם בעיות פרוסטטה ובעיות שלפוחית
+
+## Industry
+בריאות ורפואה
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://nekuda-bazman.zappy5.app/sitemap.xml
+- **Robots.txt**: https://nekuda-bazman.zappy5.app/robots.txt
