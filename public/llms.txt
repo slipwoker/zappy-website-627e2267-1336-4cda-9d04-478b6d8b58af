@@ -1,57 +1,54 @@
-# נקודה בזמן — Generative Engine Optimization Map
-
-> A בריאות ורפואה business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
-### דף הבית
-https://-627e2267.zappy5.app
+### טיפול מתקדם בבעיות פרוסטטה ושלפוחית — נקודה בזמן
+https://example.com
 נקודה בזמן מציעה טיפולים מתקדמים לבעיות פרוסטטה ושלפוחית. פתרונות טבעיים ויעילים לטיפול בהגדלת פרוסטטה שפירה ושלפוחית רגיזה. צור קשר עכשיו!
 
-### טיפולים
-https://-627e2267.zappy5.app/treatments
+### טיפולים מקצועיים לפרוסטטה ושלפוחית — נקודה בזמן
+https://example.com/treatments
 גלה את מגוון הטיפולים המתקדמים של נקודה בזמן לבעיות פרוסטטה ושלפוחית. טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס כרונית.
 
-### אודות
-https://-627e2267.zappy5.app/about
+### Page
+https://example.com/recommendations
+
+### אודות נקודה בזמן — מומחים בבריאות פרוסטטה ושלפוחית
+https://example.com/about
 הכירו את נקודה בזמן - מרכז רפואי מוביל לטיפול בבעיות פרוסטטה ושלפוחית. צוות מקצועי, טיפולים מתקדמים וגישה אישית לכל מטופל.
 
-### צור קשר
-https://-627e2267.zappy5.app/contact
+### צור קשר עם נקודה בזמן — קבע פגישת ייעוץ
+https://example.com/contact
 צור קשר עם נקודה בזמן לקביעת פגישת ייעוץ בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס. נשמח לעזור ולענות על כל שאלה.
+
+### צור קשר והגעה | נקודה בזמן
+https://example.com/contact-location
+צור קשר עם קליניקת נקודה בזמן. הוראות הגעה מפורטות, מפה, קווי אוטובוס, רכבת וחניונים באזור לטיפול בבעיות פרוסטטה ושלפוחית.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://-627e2267.zappy5.app/privacy
+https://example.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://-627e2267.zappy5.app/terms
+https://example.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://-627e2267.zappy5.app/accessibility
+https://example.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About נקודה בזמן
-נקודה בזמן is a business in the בריאות ורפואה industry.
-
-## Target Audience
-אנשים עם בעיות פרוסטטה ובעיות שלפוחית
-
-## Industry
-בריאות ורפואה
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://-627e2267.zappy5.app/sitemap.xml
-- **Robots.txt**: https://-627e2267.zappy5.app/robots.txt
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
