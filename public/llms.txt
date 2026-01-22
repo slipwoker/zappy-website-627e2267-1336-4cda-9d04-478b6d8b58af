@@ -1,64 +1,58 @@
-# נקודה בזמן — Generative Engine Optimization Map
-
-> A בריאות ורפואה business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### טיפול מתקדם בבעיות פרוסטטה ושלפוחית — נקודה בזמן
-https://nekuda-bazman.zappy5.app
+https://yonatan-shlonski.co.il
 נקודה בזמן מציעה טיפולים מתקדמים לבעיות פרוסטטה ושלפוחית. פתרונות טבעיים ויעילים לטיפול בהגדלת פרוסטטה שפירה ושלפוחית רגיזה. צור קשר עכשיו!
 
 ### טיפולים מקצועיים לפרוסטטה ושלפוחית — נקודה בזמן
-https://nekuda-bazman.zappy5.app/treatments
+https://yonatan-shlonski.co.il/treatments
 גלה את מגוון הטיפולים המתקדמים של נקודה בזמן לבעיות פרוסטטה ושלפוחית. טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס כרונית.
 
 ### Page
-https://nekuda-bazman.zappy5.app/recommendations
+https://yonatan-shlonski.co.il/recommendations
 
 ### אודות נקודה בזמן — מומחים בבריאות פרוסטטה ושלפוחית
-https://nekuda-bazman.zappy5.app/about
+https://yonatan-shlonski.co.il/about
 הכירו את נקודה בזמן - מרכז רפואי מוביל לטיפול בבעיות פרוסטטה ושלפוחית. צוות מקצועי, טיפולים מתקדמים וגישה אישית לכל מטופל.
 
 ### צור קשר עם נקודה בזמן — קבע פגישת ייעוץ
-https://nekuda-bazman.zappy5.app/contact
+https://yonatan-shlonski.co.il/contact
 צור קשר עם נקודה בזמן לקביעת פגישת ייעוץ בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס. נשמח לעזור ולענות על כל שאלה.
 
 ### צור קשר והגעה | נקודה בזמן
-https://nekuda-bazman.zappy5.app/contact-location
+https://yonatan-shlonski.co.il/contact-location
 צור קשר עם קליניקת נקודה בזמן. הוראות הגעה מפורטות, מפה, קווי אוטובוס, רכבת וחניונים באזור לטיפול בבעיות פרוסטטה ושלפוחית.
+
+### צור קשר - נקודה בזמן | ייעוץ וטיפול בבעיות פרוסטטה
+https://yonatan-shlonski.co.il/contact-348808
+צרו קשר עם נקודה בזמן לקבלת ייעוץ מקצועי ודיסקרטי בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ודלקת פרוסטטה. אנחנו כאן בשבילכם.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://nekuda-bazman.zappy5.app/privacy
+https://yonatan-shlonski.co.il/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://nekuda-bazman.zappy5.app/terms
+https://yonatan-shlonski.co.il/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://nekuda-bazman.zappy5.app/accessibility
+https://yonatan-shlonski.co.il/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About נקודה בזמן
-נקודה בזמן is a business in the בריאות ורפואה industry.
-
-## Target Audience
-אנשים עם בעיות פרוסטטה ובעיות שלפוחית
-
-## Industry
-בריאות ורפואה
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://nekuda-bazman.zappy5.app/sitemap.xml
-- **Robots.txt**: https://nekuda-bazman.zappy5.app/robots.txt
+- **Sitemap**: https://yonatan-shlonski.co.il/sitemap.xml
+- **Robots.txt**: https://yonatan-shlonski.co.il/robots.txt

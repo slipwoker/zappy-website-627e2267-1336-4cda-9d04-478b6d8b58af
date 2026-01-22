@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nekuda-bazman.zappy5.app/sitemap.xml
+Sitemap: https://yonatan-shlonski.co.il/sitemap.xml

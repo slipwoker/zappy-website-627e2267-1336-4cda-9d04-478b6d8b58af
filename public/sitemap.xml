@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nekuda-bazman.zappy5.app</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/treatments</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/treatments</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/recommendations</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/recommendations</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/about</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/about</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/contact</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/contact</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/contact-location</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/contact-location</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/privacy</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/contact-348808</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yonatan-shlonski.co.il/privacy</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/terms</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/terms</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://nekuda-bazman.zappy5.app/accessibility</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://yonatan-shlonski.co.il/accessibility</loc>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
