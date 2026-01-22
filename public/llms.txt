@@ -1,6 +1,4 @@
-# נקודה בזמן — Generative Engine Optimization Map
-
-> A בריאות ורפואה business.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -15,7 +13,7 @@ https://yonatan-shlonski.co.il/about
 הכירו את נקודה בזמן - מרכז רפואי מוביל לטיפול בבעיות פרוסטטה ושלפוחית. צוות מקצועי, טיפולים מתקדמים וגישה אישית לכל מטופל.
 
 ### טיפולים מקצועיים לפרוסטטה ושלפוחית — נקודה בזמן
-https://yonatan-shlonski.co.il/treatments
+https://yonatan-shlonski.co.il/male-urinary-problems
 גלה את מגוון הטיפולים המתקדמים של נקודה בזמן לבעיות פרוסטטה ושלפוחית. טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס כרונית.
 
 ### Page
@@ -26,11 +24,11 @@ https://yonatan-shlonski.co.il/contact
 צור קשר עם נקודה בזמן לקביעת פגישת ייעוץ בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס. נשמח לעזור ולענות על כל שאלה.
 
 ### צור קשר והגעה | נקודה בזמן
-https://yonatan-shlonski.co.il/contact-location
+https://yonatan-shlonski.co.il/blog
 צור קשר עם קליניקת נקודה בזמן. הוראות הגעה מפורטות, מפה, קווי אוטובוס, רכבת וחניונים באזור לטיפול בבעיות פרוסטטה ושלפוחית.
 
 ### צור קשר - נקודה בזמן | ייעוץ וטיפול בבעיות פרוסטטה
-https://yonatan-shlonski.co.il/contact-348808
+https://yonatan-shlonski.co.il/womens-urinary-issues
 צרו קשר עם נקודה בזמן לקבלת ייעוץ מקצועי ודיסקרטי בנושא טיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ודלקת פרוסטטה. אנחנו כאן בשבילכם.
 
 ## Legal & Policy
@@ -51,15 +49,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About נקודה בזמן
-נקודה בזמן is a business in the בריאות ורפואה industry.
-
-## Target Audience
-אנשים עם בעיות פרוסטטה ובעיות שלפוחית
-
-## Industry
-בריאות ורפואה
-
+## About Business
 ---
 
 # Additional Resources
