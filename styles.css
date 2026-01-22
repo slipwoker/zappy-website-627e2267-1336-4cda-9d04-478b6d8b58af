@@ -955,6 +955,120 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.video-content-section {
+  padding: 60px 20px;
+  background-color: var(--secondary-color);
+  font-family: system-ui, sans-serif;
+}
+
+.video-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 3px solid #D4B896;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #FFF8E7 0%, #F5E6D3 100%);
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(212, 184, 150, 0.15);
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.text-content {
+  padding-left: 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.video-content {
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 2px solid #D4B896;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .video-content-section {
+    padding: 40px 15px;
+  }
+
+  .video-content-container {
+    padding: 25px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .text-content {
+    padding-left: 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .section-text {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-content-container {
+    padding: 20px;
+    border-width: 2px;
+  }
+
+  .section-title {
+    font-size: 1.375rem;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
