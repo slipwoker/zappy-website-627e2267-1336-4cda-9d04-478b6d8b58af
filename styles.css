@@ -2059,6 +2059,129 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.video-section-v1 {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #b8d4e6 0%, #d4e4f0 50%, #e8f1f7 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container-v1 {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.video-header-v1 {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInDown-v1 0.8s ease-out;
+}
+
+.video-title-v1 {
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-subtitle-v1 {
+  font-family: system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5a6c7d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.video-frame-wrapper-v1 {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(44, 62, 80, 0.15);
+  border: 3px solid rgba(52, 152, 219, 0.3);
+  animation: fadeInUp-v1 0.8s ease-out 0.2s both;
+}
+
+.video-embed-v1 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; /* 9:16 aspect ratio for vertical video */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+.video-embed-v1 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+@keyframes fadeInDown-v1 {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp-v1 {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section-v1 {
+    padding: 60px 15px;
+  }
+  
+  .video-title-v1 {
+    font-size: 2rem;
+  }
+  
+  .video-subtitle-v1 {
+    font-size: 1.2rem;
+  }
+  
+  .video-frame-wrapper-v1 {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-title-v1 {
+    font-size: 1.75rem;
+  }
+  
+  .video-subtitle-v1 {
+    font-size: 1.1rem;
+  }
+  
+  .video-frame-wrapper-v1 {
+    padding: 15px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
