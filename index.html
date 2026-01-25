@@ -707,16 +707,16 @@
       </div>
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
-        <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
-        <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display: none;">
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
           <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
@@ -731,15 +731,61 @@
     </div>
   </nav>
 
-  <section class="hero" id="zappy-section-0">
-    <div class="hero-overlay"></div>
-    <img data-placeholder="hero-1" data-context="רופא אורולוג מנוסה מייעץ למטופל בקליניקה מודרנית ומרגיעה, אווירה מקצועית ואמפתית" src="/assets/hero-hero-1-1768842571665-h0yw2l.webp" alt="נקודה בזמן - טיפול מקצועי בבעיות פרוסטטה" class="hero-img zappy-editable-image" data-element-type="image" data-element-id="img-1768839883692-1b2dzk3th" style="object-position: 9% 44%; object-fit: cover; width: 100%; height: 100%;">
-    <div class="container hero-content">
-      <h1 style="">יהונתן שלונסקי<br><br><br><br><br><br><br><br>ריפוי הוליסטי&nbsp;</h1>
-      <h3 style=""><span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>נקודה בזמן מציעה טיפולים יעילים וטבעיים לטיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס ובעיות שתן נוספות</span></h3>
-      <a href="/contact" class="btn-primary hero-cta" data-original-href="/contact" data-element-type="button" data-element-id="btn-1768839883686-iepp0pq7e" data-native-element="true">קבע פגישת ייעוץ</a>
-    </div>
-  </section>
+  
+
+<section id="layout-1769349684375" class="layout-section hero-section" data-zappy-component="true" style="width: 100vw; margin-left: calc(50% - 50vw); min-height: 500px; position: relative; display: flex; align-items: center; justify-content: center; direction: rtl; overflow: hidden; box-sizing: border-box;">
+  <!-- CSS override for hero background images and content elements - ensures correct styling -->
+  <style>
+    .hero-bg-container img.hero-background-image,
+    .hero-bg-container img[data-hero-background="true"] {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      max-width: none !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+    /* Ensure interactive elements in hero section are clickable */
+    #layout-1769349684375 button,
+    #layout-1769349684375 a,
+    #layout-1769349684375 .btn,
+    #layout-1769349684375 [class*="btn"],
+    #layout-1769349684375 [data-element-type="button"],
+    #layout-1769349684375 h1,
+    #layout-1769349684375 h2,
+    #layout-1769349684375 h3,
+    #layout-1769349684375 h4,
+    #layout-1769349684375 p {
+      pointer-events: auto !important;
+      position: relative;
+    }
+  </style>
+  <!-- Background Image Container - full bleed -->
+  <div class="hero-bg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+    <img data-placeholder="hero-bg-1769349684375" data-context="Hero background image for נקודה-בזמן,&nbsp; יהונתן שלונסקי<br>ריפוי הוליסטי" data-zappy-editable-image="true" data-element-type="image" data-hero-background="true" src="/assets/business-general-service-upload-1769349697031.webp?t=1769349699152" alt="Hero background" style="width: auto; height: auto; object-fit: contain; object-position: 50% 50%; cursor: pointer; display: block; max-width: 600px; border-radius: 8px; margin: 20px;" class="layout-placeholder-image zappy-editable-image hero-background-image" data-element-id="img-1769349686711-kdwnpnjso">
+  </div>
+  
+  <!-- Dark Overlay for text readability (pointer-events: none allows clicking through to image) -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 2; pointer-events: none;"></div>
+  
+  <!-- Content (pointer-events: none on container, auto on interactive elements via CSS above) -->
+  <div class="container" style="position: relative; z-index: 3; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 1.5rem; text-align: center; pointer-events: none; box-sizing: border-box;">
+    <h1 style="font-size: 48px; font-weight: 700; color: #FFFFFF; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: auto;">נקודה-בזמן,&nbsp; יהונתן שלונסקי<br>ריפוי הוליסטי</h1>
+    <h3 style="font-size: 24px; font-weight: 400; color: #FFFFFF; opacity: 0.9; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.3); pointer-events: auto;">
+
+נקודה בזמן מציעה טיפולים יעילים וטבעיים לטיפול בהגדלת פרוסטטה שפירה, שלפוחית רגיזה ופרוסטטיטיס ובעיות שתן נוספות
+
+</h3>
+  </div>
+</section>
+
+
+
+
+
+
 
   <section class="intro-section" id="temp-section-1768493596673">
     <div class="container">
@@ -777,47 +823,66 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="video-content-section visible" dir="rtl" data-zappy-component="true" id="ai-section-1769108742219-gaxjqdk" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s, transform 0.8s;">
+<section class="video-content-section" dir="rtl" data-zappy-component="true" id="ai-section-1769349961436-2lkiyk0">
   <div class="video-content-container">
     <div class="content-wrapper">
       <div class="text-content">
-        
+        <h2 class="section-title">
+
+מה האינפורמציה שניתן לדלות מהתפקוד של השתן?
+
+</h2>
         <div class="section-text">
-          <p style=""><span><b>מה האינפורמציה שניתן לדלות מהתפקוד של השתן?&nbsp;</b>קושי בהחזקת השתן. מעיד על חולשה בצינור העיכול. ובעצם מספר לנו על היכולת של הגוף להטמיע אנרגיה הן מבחוץ, מהמזון, הן מהשתייה, והן באיזון חוזר לפרוק חום מהלב ולהטמיע אותו ב- דרך צינור העיכול לתוך ליבת הגוף. דחיפות במתן שתן כמו במצבי שלפוחית רגיזה, מעיד על חום במערכת העצבים. חום כזה יוצר מתח רגשי, וזה מה שלוחץ על השלפוחית. עצירת שתן או ירידה בזרימה? מי דלקות תפקוד זרימת דם, סירקולציית דם שתלוי הן באדרנל ותלוי הן בכבד. ובעצם אנחנו רואים שהשתן משקף את מצב כל הגוף, גם את הדרך הלוך וגם את- מהכליות דרך הכבד לכיוון הלב וגם את הדרך חזור, מה שפורה חומא הלב דרך צינור העיכול בחזרה לליבת הגוף, לכליות.</span></p>
-          
+          <p>
+
+קושי בהחזקת השתן. מעיד על חולשה בצינור העיכול. ובעצם מספר לנו על היכולת של הגוף להטמיע אנרגיה הן מבחוץ, מהמזון, הן מהשתייה, והן באיזון חוזר לפרוק חום מהלב ולהטמיע אותו ב- דרך צינור העיכול לתוך ליבת הגוף. דחיפות במתן שתן כמו במצבי שלפוחית רגיזה, מעיד על חום במערכת העצבים. חום כזה יוצר מתח רגשי, וזה מה שלוחץ על השלפוחית. עצירת שתן או ירידה בזרימה? מי דלקות תפקוד זרימת דם, סירקולציית דם שתלוי הן באדרנל ותלוי הן בכבד. ובעצם אנחנו רואים שהשתן משקף את מצב כל הגוף, גם את הדרך הלוך וגם את- מהכליות דרך הכבד לכיוון הלב וגם את הדרך חזור, מה שפורה חומא הלב דרך צינור העיכול בחזרה לליבת הגוף, לכליות.
+
+</p>
           
         </div>
       </div>
-      <div class="video-wrapper"><div style="width: 100%; max-width: 600px; display: block; margin-left: auto; margin-right: auto;"><div style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769349254665-u56rv59o4" id="zappy-element-1769349254665-u56rv59o4"><iframe src="https://www.youtube.com/embed/sUmGi3cHZu8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></div>
-        
+      <div class="video-content">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/sUmGi3cHZu8" title="וידאו הסבר על הטיפול" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -870,7 +935,7 @@
       <div class="features-grid zappy-preserve-css-grid" data-original-item-width="316" data-original-gap="32px" style="grid-template-columns: 316px 316px 316px 316px 0px;" id="zappy-auto-grid-1768849431953-qg55lj" data-zappy-auto-grid="true">
         <div class="feature-item">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewbox="0 0 50 50" data-icon="ei:user" data-iconify="ei:user" data-element-type="icon" data-element-id="icon-1768839883690-s60qb9ndz" data-icon-type="iconify" data-size-adjusted="true" style="width: 68px; height: 68px; display: inline-block; vertical-align: -0.125em; color: rgb(52, 152, 219);" class="iconify iconify--ei"><path fill="currentColor" d="M25.1 42c-9.4 0-17-7.6-17-17s7.6-17 17-17s17 7.6 17 17s-7.7 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.8-15-15-15"></path><path fill="currentColor" d="m15.3 37.3l-1.8-.8c.5-1.2 2.1-1.9 3.8-2.7s3.8-1.7 3.8-2.8v-1.5c-.6-.5-1.6-1.6-1.8-3.2c-.5-.5-1.3-1.4-1.3-2.6c0-.7.3-1.3.5-1.7c-.2-.8-.4-2.3-.4-3.5c0-3.9 2.7-6.5 7-6.5c1.2 0 2.7.3 3.5 1.2c1.9.4 3.5 2.6 3.5 5.3c0 1.7-.3 3.1-.5 3.8c.2.3.4.8.4 1.4c0 1.3-.7 2.2-1.3 2.6c-.2 1.6-1.1 2.6-1.7 3.1V31c0 .9 1.8 1.6 3.4 2.2c1.9.7 3.9 1.5 4.6 3.1l-1.9.7c-.3-.8-1.9-1.4-3.4-1.9c-2.2-.8-4.7-1.7-4.7-4v-2.6l.5-.3s1.2-.8 1.2-2.4v-.7l.6-.3c.1 0 .6-.3.6-1.1c0-.2-.2-.5-.3-.6l-.4-.4l.2-.5s.5-1.6.5-3.6c0-1.9-1.1-3.3-2-3.3h-.6l-.3-.5c0-.4-.7-.8-1.9-.8c-3.1 0-5 1.7-5 4.5c0 1.3.5 3.5.5 3.5l.1.5l-.4.5c-.1 0-.3.3-.3.7c0 .5.6 1.1.9 1.3l.4.3v.5c0 1.5 1.3 2.3 1.3 2.4l.5.3v2.6c0 2.4-2.6 3.6-5 4.6c-1.1.4-2.6 1.1-2.8 1.6"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 50 50" data-icon="ei:user" data-iconify="ei:user" data-element-type="icon" data-element-id="icon-1768839883690-s60qb9ndz" data-icon-type="iconify" data-size-adjusted="true" style="width: 68px; height: 68px; display: inline-block; vertical-align: -0.125em; color: rgb(52, 152, 219);" class="iconify iconify--ei"><path fill="currentColor" d="M25.1 42c-9.4 0-17-7.6-17-17s7.6-17 17-17s17 7.6 17 17s-7.7 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.8-15-15-15"></path><path fill="currentColor" d="m15.3 37.3l-1.8-.8c.5-1.2 2.1-1.9 3.8-2.7s3.8-1.7 3.8-2.8v-1.5c-.6-.5-1.6-1.6-1.8-3.2c-.5-.5-1.3-1.4-1.3-2.6c0-.7.3-1.3.5-1.7c-.2-.8-.4-2.3-.4-3.5c0-3.9 2.7-6.5 7-6.5c1.2 0 2.7.3 3.5 1.2c1.9.4 3.5 2.6 3.5 5.3c0 1.7-.3 3.1-.5 3.8c.2.3.4.8.4 1.4c0 1.3-.7 2.2-1.3 2.6c-.2 1.6-1.1 2.6-1.7 3.1V31c0 .9 1.8 1.6 3.4 2.2c1.9.7 3.9 1.5 4.6 3.1l-1.9.7c-.3-.8-1.9-1.4-3.4-1.9c-2.2-.8-4.7-1.7-4.7-4v-2.6l.5-.3s1.2-.8 1.2-2.4v-.7l.6-.3c.1 0 .6-.3.6-1.1c0-.2-.2-.5-.3-.6l-.4-.4l.2-.5s.5-1.6.5-3.6c0-1.9-1.1-3.3-2-3.3h-.6l-.3-.5c0-.4-.7-.8-1.9-.8c-3.1 0-5 1.7-5 4.5c0 1.3.5 3.5.5 3.5l.1.5l-.4.5c-.1 0-.3.3-.3.7c0 .5.6 1.1.9 1.3l.4.3v.5c0 1.5 1.3 2.3 1.3 2.4l.5.3v2.6c0 2.4-2.6 3.6-5 4.6c-1.1.4-2.6 1.1-2.8 1.6"></path></svg>
           </div>
           <h3 style="">איש מקצוע ומנוסה</h3>
           <p style="">יהונתן שלונסקי צבר נסיון רב מבוסס קלינית בטחום הפרוסטטה והשתן</p>
@@ -878,7 +943,7 @@
         
         <div class="feature-item">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewbox="0 0 16 16" data-icon="bi:heart" data-iconify="bi:heart" data-element-type="icon" data-element-id="icon-1768839883690-ascox2mem" data-icon-type="iconify" data-size-adjusted="true" style="width: 48px; height: 48px; display: inline-block; vertical-align: -0.125em; color: rgb(52, 152, 219); pointer-events: auto; cursor: pointer;" class="iconify iconify--bi"><path fill="currentColor" d="m8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385c.92 1.815 2.834 3.989 6.286 6.357c3.452-2.368 5.365-4.542 6.286-6.357c.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 16 16" data-icon="bi:heart" data-iconify="bi:heart" data-element-type="icon" data-element-id="icon-1768839883690-ascox2mem" data-icon-type="iconify" data-size-adjusted="true" style="width: 48px; height: 48px; display: inline-block; vertical-align: -0.125em; color: rgb(52, 152, 219); pointer-events: auto; cursor: pointer;" class="iconify iconify--bi"><path fill="currentColor" d="m8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385c.92 1.815 2.834 3.989 6.286 6.357c3.452-2.368 5.365-4.542 6.286-6.357c.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"></path></svg>
           </div>
           <h3>גישה אישית ומותאמת</h3>
           <p>בנקודה בזמן, כל מטופל מקבל תכנית טיפול מותאמת אישית, המתחשבת במצבו הרפואי, בצרכיו ובהעדפותיו האישיות.</p>
@@ -886,7 +951,7 @@
         
         <div class="feature-item">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewbox="0 0 24 24" data-icon="mdi:leaf" data-iconify="mdi:leaf" data-element-type="icon" data-element-id="icon-1768839883690-5h9cympw0" data-icon-type="iconify" data-size-adjusted="true" style="width: 48px; height: 48px; display: inline-block; vertical-align: -0.125em; color: rgb(86, 172, 225);" class="iconify iconify--mdi"><path fill="currentColor" d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="mdi:leaf" data-iconify="mdi:leaf" data-element-type="icon" data-element-id="icon-1768839883690-5h9cympw0" data-icon-type="iconify" data-size-adjusted="true" style="width: 48px; height: 48px; display: inline-block; vertical-align: -0.125em; color: rgb(86, 172, 225);" class="iconify iconify--mdi"><path fill="currentColor" d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8"></path></svg>
           </div>
           <h3 style="">שילוב טיפול הוליסטי- טיבעי</h3>
           <p style="">יהונתן משלב את הידע הסיני העתיק עם פתולוגיה מודרנית, ובגישה הוליסטית,&nbsp;<br><br><br><br>למען תוצאות אופטימליות ובטוחות.</p>
@@ -894,7 +959,7 @@
         
         <div class="feature-item">
           <div class="feature-icon">
-            <div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewbox="0 0 24 24" data-icon="majesticons:comments" data-iconify="majesticons:comments" data-element-type="icon" data-element-id="icon-1768839883690-q6o33n1su" data-icon-type="iconify" data-size-adjusted="true" style="width: 58px; height: 58px; display: inline-block; vertical-align: -0.125em; color: rgb(79, 163, 243);" class="iconify iconify--majesticons"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 12h-.394a2 2 0 0 0-1.11.336L3 14V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2"></path><path fill="currentColor" d="M12 10h7a2 2 0 0 1 2 2v9l-2.496-1.664a2 2 0 0 0-1.11-.336H12a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2"></path></g></svg></div>
+            <div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="majesticons:comments" data-iconify="majesticons:comments" data-element-type="icon" data-element-id="icon-1768839883690-q6o33n1su" data-icon-type="iconify" data-size-adjusted="true" style="width: 58px; height: 58px; display: inline-block; vertical-align: -0.125em; color: rgb(79, 163, 243);" class="iconify iconify--majesticons"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 12h-.394a2 2 0 0 0-1.11.336L3 14V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2"></path><path fill="currentColor" d="M12 10h7a2 2 0 0 1 2 2v9l-2.496-1.664a2 2 0 0 0-1.11-.336H12a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2"></path></g></svg></div>
           </div>
           <h3>ליווי ותמיכה מתמשכת</h3>
           <p style="">יהונתן מציע ליווי מתמשך לאורך כל תהליך הטיפול, עם זמינות לייעוץ ותמיכה בכל שלב.</p>
