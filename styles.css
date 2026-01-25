@@ -1418,6 +1418,534 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.herbal-hero-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #b8c6db 0%, #f5f7fa 100%);
+}
+
+.herbal-hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.herbal-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(184, 198, 219, 0.85) 0%, rgba(245, 247, 250, 0.9) 100%);
+  z-index: 2;
+}
+
+.herbal-hero-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.herbal-hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.herbal-hero-title {
+  font-family: system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  direction: rtl;
+}
+
+.herbal-hero-subtitle {
+  font-family: system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5a6c7d;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  direction: rtl;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .herbal-hero-section {
+    min-height: 500px;
+  }
+
+  .herbal-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .herbal-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .herbal-hero-container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .herbal-hero-title {
+    font-size: 2rem;
+  }
+
+  .herbal-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .herbal-hero-container {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Added Component Styles */
+.herbal-hero-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+.herbal-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.herbal-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.herbal-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.75) 0%, rgba(52, 152, 219, 0.65) 100%);
+  z-index: 2;
+}
+
+.herbal-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.herbal-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+}
+
+.herbal-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+  opacity: 0.9;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .herbal-hero-section {
+    min-height: 500px;
+    padding: 60px 20px;
+  }
+
+  .herbal-hero-content {
+    padding: 30px 25px;
+  }
+
+  .herbal-hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .herbal-hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .herbal-hero-section {
+    min-height: 450px;
+    padding: 40px 15px;
+  }
+
+  .herbal-hero-content {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .herbal-hero-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .herbal-hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Added Component Styles */
+.herbal-bg-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herbal-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.herbal-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.85) 0%,
+    rgba(52, 152, 219, 0.75) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.herbal-content {
+  max-width: 1200px;
+  text-align: center;
+  color: white;
+  animation: fadeInUp 1s ease-out;
+}
+
+.herbal-title {
+  font-family: system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.herbal-subtitle {
+  font-family: system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .herbal-bg-section {
+    min-height: 400px;
+  }
+
+  .herbal-title {
+    font-size: 2.5rem;
+  }
+
+  .herbal-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .herbal-overlay {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .herbal-bg-section {
+    min-height: 350px;
+  }
+
+  .herbal-title {
+    font-size: 2rem;
+  }
+
+  .herbal-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Added Component Styles */
+.herbal-medicine-section {
+  background: linear-gradient(135deg, #b8c6db 0%, #d4dce6 50%, #e8eef3 100%);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.herbal-medicine-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.herbal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.herbal-content {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.herbal-title {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.herbal-subtitle {
+  font-size: 1.3rem;
+  color: #34495e;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.herbal-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.herbal-image-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.herbal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.herbal-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(44, 62, 80, 0.95) 0%, rgba(44, 62, 80, 0.7) 60%, transparent 100%);
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.herb-tag {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.herb-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.herb-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.herb-benefit {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.herbal-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 35px 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(52, 152, 219, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.benefit-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .herbal-medicine-section {
+    padding: 50px 15px;
+  }
+
+  .herbal-title {
+    font-size: 2rem;
+  }
+
+  .herbal-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .herbal-image {
+    min-height: 300px;
+  }
+
+  .herbal-overlay {
+    padding: 20px 15px;
+    gap: 10px;
+  }
+
+  .herb-tag {
+    padding: 10px 15px;
+  }
+
+  .herb-name {
+    font-size: 0.95rem;
+  }
+
+  .herb-benefit {
+    font-size: 0.85rem;
+  }
+
+  .herbal-benefits {
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 25px 20px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
