@@ -92,8 +92,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -107,13 +107,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
+            li:has(.menu-group-title):hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -122,7 +122,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -175,9 +175,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -215,8 +215,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -230,8 +230,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -272,18 +272,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -309,23 +309,23 @@
               }
               
               /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 flex: 1 !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -363,9 +363,9 @@
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
@@ -385,10 +385,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &gt; 768) {
+                if (window.innerWidth > 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -411,7 +411,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -471,7 +471,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -708,20 +708,20 @@
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
         <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/about">אודות</a><ul class="sub-menu"></ul></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/womens-urinary-problems" class="">בעיות שתן נשים</a></li><li><a href="/recommendations" class="">סרטוני עדויות פרוסטטה<br><br><br><br></a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/about">אודות</a><ul class="sub-menu"></ul></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/womens-urinary-problems" class>בעיות שתן נשים</a></li><li><a href="/recommendations" class>סרטוני עדויות פרוסטטה<br><br><br><br></a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
@@ -773,7 +773,7 @@
   <!-- Content (pointer-events: none on container, auto on interactive elements via CSS above) -->
   <div class="container" style="position: relative; z-index: 3; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 1.5rem; text-align: center; pointer-events: none; box-sizing: border-box;">
     <h1 style="font-size: 48px; font-weight: 700; color: rgb(255, 255, 255); margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif; text-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px; pointer-events: auto;"><span>אודות יהונתן שלונסקי&nbsp;</span></h1>
-    <h3 style="font-size: 24px; font-weight: 400; color: rgb(255, 255, 255); opacity: 0.9; max-width: 700px; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px; pointer-events: auto;"></h3><h2 style=""><font color="#ffffff">&nbsp; &nbsp; גישה פורצת דרך בהבנת טיפולי הפרוסטטה והשתן&nbsp;&nbsp;<br><br><font color="#ffffff"><br><br></font><br><br><font color="#ffffff"><br><br></font><br><br><font color="#ffffff"><br><br></font><br><br></font></h2>
+    <h3 style="font-size: 24px; font-weight: 400; color: rgb(255, 255, 255); opacity: 0.9; max-width: 700px; margin: 0px auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px; pointer-events: auto;"></h3><h2 style><font color="#ffffff">&nbsp; &nbsp; גישה פורצת דרך בהבנת טיפולי הפרוסטטה והשתן&nbsp;&nbsp;<br><br><font color="#ffffff"><br><br></font><br><br><font color="#ffffff"><br><br></font><br><br><font color="#ffffff"><br><br></font><br><br></font></h2>
   </div>
 </section>
 
@@ -787,16 +787,33 @@
 
 
 
-<section class="video-showcase-section" dir="rtl" data-zappy-component="true" id="ai-section-1768842364804-7lse3fs" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s, transform 0.8s;">
-  <div class="video-container">
+<section class="video-showcase-section" dir="rtl" data-zappy-component="true" id="ai-section-1768842364804-7lse3fs" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+  <div class="video-container"><div class="zappy-inserted-element" style="text-align: center; display: flex; justify-content: center; width: 100%;">
+        <div style="width: 100%; max-width: 600px;">
+          <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: transparent; border-radius: 8px; overflow: hidden;" data-element-type="video">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+              <svg style="width: 270px; height: 265px; display: block;" viewBox="0 0 270 265" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="266" height="261" rx="40" stroke="#FF0083" stroke-width="4"/>
+                <g clip-path="url(#clip0_201_1806)">
+                  <path d="M102.5 91L112.5 82.5L123.5 81.5L175.5 119L182.5 131.5L178.5 142L125.5 180.5L116 183.5L109 181L102 172L102.5 91Z" fill="#FFE8F4"/>
+                  <path d="M177.228 117.668L127.264 81.483C121.838 77.496 114.723 76.929 108.729 79.9665C102.636 83.058 99 88.98 99 95.811V168.194C99 175.029 102.641 180.951 108.734 184.038C111.335 185.357 114.089 186.009 116.82 186.009C120.483 186.009 124.105 184.835 127.251 182.526L177.223 146.337L177.237 146.328C181.849 142.944 184.495 137.724 184.495 132C184.495 126.276 181.849 121.056 177.223 117.668H177.228ZM174.582 142.692L124.605 178.886C120.492 181.91 115.322 182.328 110.772 180.024C106.218 177.716 103.504 173.297 103.504 168.194V95.8065C103.504 90.708 106.223 86.289 110.772 83.976C112.703 82.995 114.736 82.5 116.82 82.5C119.587 82.5 122.283 83.4045 124.618 85.1235L174.587 121.308C178.029 123.833 180.005 127.73 180.005 132C180.005 136.271 178.034 140.163 174.587 142.692H174.582Z" fill="#FF0083"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_201_1806">
+                    <rect width="108" height="108" fill="white" transform="translate(81 78)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     
         
           
         
       <div class="video-frame">
-      <div class="video-wrapper loaded" data-element-type="video" data-element-id="video-1768853461358-rexsh06mu" style="max-width: 800px; margin: 20px auto; display: flex; justify-content: center;">
-        <iframe src="https://www.youtube.com/embed/6vKbCSKKRPA" title="סרטון הסבר" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="pointer-events: none;"></iframe>
-      </div>
+      
     </div>
     <div class="video-caption">
       <h2>גלה עוד על הטיפולים המתקדמים שלנו</h2>
@@ -860,26 +877,26 @@
           <div class="value-icon">
             <i class="fas fa-graduation-cap" data-element-type="icon" data-element-id="icon-1768856621854-v5hqu2uek" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
           </div>
-          <h3 class="">מקצועיות ומומחיות</h3>
-          <p class="" style="">יהונתן שלונסקי יצר מודל חשיבה על בסיס קליניקה, ולא על בסיס שינון והעתקה מספרים. מודל ייחודי זה מהווה גישה ייחודית לטיפולי פרוסטטה, אשר לא רשומה בשום ספר או מקור.</p>
+          <h3 class>מקצועיות ומומחיות</h3>
+          <p class style>יהונתן שלונסקי יצר מודל חשיבה על בסיס קליניקה, ולא על בסיס שינון והעתקה מספרים. מודל ייחודי זה מהווה גישה ייחודית לטיפולי פרוסטטה, אשר לא רשומה בשום ספר או מקור.</p>
         </div><div class="value-item">
           <div class="value-icon">
             <i class="fas fa-lightbulb" data-element-type="icon" data-element-id="icon-1768856621854-rbztejlgo" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
           </div>
-          <h3 class="">חדשנות ומחקר</h3>
-          <p class="" style="">יהונתן שלונסקי- מפתח שיטת הריפוי ההוליסטי לפרוסטטה, ממשיך ללמוד, לפתח ולחדד את מסכנותיו הבאים ליידי ביטוי בפרקטיקה עם מטופליו.</p>
+          <h3 class>חדשנות ומחקר</h3>
+          <p class style>יהונתן שלונסקי- מפתח שיטת הריפוי ההוליסטי לפרוסטטה, ממשיך ללמוד, לפתח ולחדד את מסכנותיו הבאים ליידי ביטוי בפרקטיקה עם מטופליו.</p>
         </div><div class="value-item">
           <div class="value-icon">
             <i class="fas fa-users" data-element-type="icon" data-element-id="icon-1768856621854-3anmp9hh0" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
           </div>
-          <h3 class="">גישה אישית</h3>
-          <p class="">כל מטופל בנקודה בזמן מקבל תכנית טיפול מותאמת אישית, המתחשבת במצבו הרפואי הייחודי, בצרכיו ובהעדפותיו האישיות.</p>
+          <h3 class>גישה אישית</h3>
+          <p class>כל מטופל בנקודה בזמן מקבל תכנית טיפול מותאמת אישית, המתחשבת במצבו הרפואי הייחודי, בצרכיו ובהעדפותיו האישיות.</p>
         </div><div class="value-item">
           <div class="value-icon">
             <i class="fas fa-leaf" data-element-type="icon" data-element-id="icon-1768856621854-igi6w5kbp" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
           </div>
-          <h3 class="">גישה הוליסטית</h3>
-          <p class="">נקודה בזמן מאמינה בטיפול שמתייחס לאדם כמכלול - גוף, נפש ורוח. אנו משלבים שיטות טבעיות עם רפואה מודרנית לתוצאות מיטביות.</p>
+          <h3 class>גישה הוליסטית</h3>
+          <p class>נקודה בזמן מאמינה בטיפול שמתייחס לאדם כמכלול - גוף, נפש ורוח. אנו משלבים שיטות טבעיות עם רפואה מודרנית לתוצאות מיטביות.</p>
         </div></div>
     </div>
   </section>
@@ -889,7 +906,7 @@
       <h2>למה לבחור בנקודה בזמן?</h2>
       <div class="why-choose-content">
         <p>בחירה ביהונתן שלונסקי לטיפול בבעיות פרוסטטה ושלפוחית היא החלטה חשובה. יהונתן מציע שילוב ייחודי של יתרונות שהופכים אותנו לבחירה הבטוחה והיעילה ביותר:</p>
-        <ul class="benefits-list zappy-vertical-grid" style="display: grid; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);"><li class=""><strong>ניסיון מוכח:</strong> שנות ניסיון רבות בטיפול מוצלח באלפי מטופלים עם בעיות פרוסטטה ושלפוחית.</li><li class=""><strong>מקצוענות:</strong>&nbsp;שנות הנסיון, חשיבה ייחודית ווירטואוזית, והתמקדות בשדה צר מביאות את המומחיות לקצה.</li><li class=""><strong>טיפולים מתקדמים:</strong> שילוב של דרך חשיבה מתקדמת ובשיטות טיפול עתיקות.</li><li class=""><strong>גישה משולבת:</strong> שילוב של חשיבה הוליסטית עם תוצאות קונבנציונלית.</li><li class=""><strong>התאמה אישית:</strong> כל תכנית טיפול מותאמת אישית למטופל ולצרכיו הספציפיים.</li><li class=""><strong>ליווי מתמשך:</strong> תמיכה ומעקב רפואי לאורך כל תהליך הטיפול ואחריו.</li><li class=""><strong>זמינות וגמישות:</strong> שעות פעילות נוחות ויכולת לקבוע פגישות במהירות.</li></ul>
+        <ul class="benefits-list zappy-vertical-grid" style="display: grid; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);"><li class><strong>ניסיון מוכח:</strong> שנות ניסיון רבות בטיפול מוצלח באלפי מטופלים עם בעיות פרוסטטה ושלפוחית.</li><li class><strong>מקצוענות:</strong>&nbsp;שנות הנסיון, חשיבה ייחודית ווירטואוזית, והתמקדות בשדה צר מביאות את המומחיות לקצה.</li><li class><strong>טיפולים מתקדמים:</strong> שילוב של דרך חשיבה מתקדמת ובשיטות טיפול עתיקות.</li><li class><strong>גישה משולבת:</strong> שילוב של חשיבה הוליסטית עם תוצאות קונבנציונלית.</li><li class><strong>התאמה אישית:</strong> כל תכנית טיפול מותאמת אישית למטופל ולצרכיו הספציפיים.</li><li class><strong>ליווי מתמשך:</strong> תמיכה ומעקב רפואי לאורך כל תהליך הטיפול ואחריו.</li><li class><strong>זמינות וגמישות:</strong> שעות פעילות נוחות ויכולת לקבוע פגישות במהירות.</li></ul>
         <p>בנקודה בזמן, אנו מחויבים להצלחת הטיפול שלך ולשיפור איכות חייך. אנו מזמינים אותך לבוא ולהכיר את המרכז, הצוות והשיטות שלנו, ולגלות בעצמך מדוע כל כך הרבה מטופלים בוחרים בנו.</p>
       </div>
     </div>
@@ -966,14 +983,14 @@
         var header = document.getElementById('zappy-attribution-header');
         if (header) {
           // Use dynamic announcement content if available
-          if (data.announcement &amp;&amp; data.announcement.html) {
+          if (data.announcement && data.announcement.html) {
             header.innerHTML = data.announcement.html;
           }
           // Apply fixed positioning styles inline (works for existing sites too)
           header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
           // Fix child elements that might have position: fixed from old CSS
           var children = header.querySelectorAll('*');
-          for (var i = 0; i &lt; children.length; i++) {
+          for (var i = 0; i < children.length; i++) {
             children[i].style.position = 'static';
           }
           // Get header height
@@ -981,9 +998,9 @@
           // Find and fix navbar to be fixed as well (prevents gap at top of page)
           var navSelectors = ['nav', '.navbar', '.nav'];
           var navbar = null;
-          for (var j = 0; j &lt; navSelectors.length; j++) {
+          for (var j = 0; j < navSelectors.length; j++) {
             navbar = document.querySelector(navSelectors[j]);
-            if (navbar &amp;&amp; navbar.id !== 'zappy-attribution-header') break;
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
             navbar = null;
           }
           if (navbar) {
