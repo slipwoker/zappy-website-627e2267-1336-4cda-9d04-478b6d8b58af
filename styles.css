@@ -2483,6 +2483,132 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.landscape-section-v1 {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #b8d4e6 0%, #d4e4f0 100%);
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+}
+
+.landscape-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.landscape-image-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.landscape-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.landscape-image:hover {
+  transform: scale(1.02);
+}
+
+.landscape-content-frame {
+  padding: 50px;
+  background: linear-gradient(135deg, #c8dce8 0%, #e0ebf4 100%);
+  border: 3px solid #a8c8dc;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+}
+
+.landscape-content-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #a8c8dc);
+}
+
+.content-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.landscape-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+.landscape-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin: 0 0 30px 0;
+  opacity: 0.9;
+}
+
+.landscape-cta {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.landscape-cta:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.landscape-cta:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .landscape-section-v1 {
+    padding: 40px 15px;
+  }
+  
+  .landscape-image-wrapper {
+    height: 250px;
+  }
+  
+  .landscape-content-frame {
+    padding: 30px 20px;
+  }
+  
+  .landscape-title {
+    font-size: 1.875rem;
+  }
+  
+  .landscape-description {
+    font-size: 1rem;
+  }
+  
+  .landscape-cta {
+    width: 100%;
+    padding: 14px 30px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
