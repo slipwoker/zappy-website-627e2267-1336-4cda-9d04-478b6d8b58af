@@ -2141,6 +2141,117 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.video-content-section {
+  background: linear-gradient(135deg, #b8d4e8 0%, #d4e4f0 100%);
+  padding: 80px 20px;
+  border: 2px solid #a8c5db;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.video-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.2;
+  font-family: system-ui, sans-serif;
+}
+
+.section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.video-content {
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 3px solid #a8c5db;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 968px) {
+  .video-content-section {
+    padding: 60px 20px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-content-section {
+    padding: 40px 15px;
+    margin: 20px 0;
+  }
+
+  .content-wrapper {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
