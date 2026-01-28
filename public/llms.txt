@@ -1,6 +1,4 @@
-# נקודה בזמן — Generative Engine Optimization Map
-
-> A בריאות ורפואה business.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -46,15 +44,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About נקודה בזמן
-נקודה בזמן is a business in the בריאות ורפואה industry.
-
-## Target Audience
-אנשים עם בעיות פרוסטטה ובעיות שלפוחית
-
-## Industry
-בריאות ורפואה
-
+## About Business
 ---
 
 # Additional Resources
