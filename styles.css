@@ -3218,7 +3218,8 @@ body.accessibility-widget-visible ._access-menu {
   
   /* ========== MAIN PADDING FIX ========== */
   /* Fix double-padding from old V2 mobile CSS that applied padding to both main and sections */
-  main {
+  /* Exclude ecommerce-page which needs its own horizontal padding for proper mobile layout */
+  main:not(.ecommerce-page) {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
