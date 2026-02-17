@@ -349,8 +349,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu &amp;amp;gt; li &amp;amp;gt; .menu-group-title,
+            #navMenu &amp;amp;gt; li &amp;amp;gt; .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -364,13 +364,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu &amp;amp;gt; li &amp;amp;gt; .menu-group-title:hover,
+            #navMenu &amp;amp;gt; li &amp;amp;gt; .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
+            li:has(.menu-group-title):hover &amp;amp;gt; .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -379,7 +379,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover &amp;amp;gt; .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -432,9 +432,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
+            .nav-menu li:hover &amp;amp;gt; .sub-menu,
+            nav li:hover &amp;amp;gt; .sub-menu,
+            .navbar li:hover &amp;amp;gt; .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -472,8 +472,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu &amp;amp;gt; li &amp;amp;gt; .menu-group-title,
+            #navMenu &amp;amp;gt; li &amp;amp;gt; .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -487,8 +487,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu &amp;amp;gt; li &amp;amp;gt; .menu-group-title:hover,
+            #navMenu &amp;amp;gt; li &amp;amp;gt; .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -529,18 +529,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
+              .nav-menu li:hover &amp;amp;gt; .sub-menu,
+              nav li:hover &amp;amp;gt; .sub-menu,
+              .navbar li:hover &amp;amp;gt; .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
+              .nav-menu li &amp;amp;gt; .sub-menu.mobile-expanded,
+              nav li &amp;amp;gt; .sub-menu.mobile-expanded,
+              .navbar li &amp;amp;gt; .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -566,23 +566,23 @@
               }
               
               /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; a,
+              nav li:has(.sub-menu) &amp;amp;gt; a,
+              .navbar li:has(.sub-menu) &amp;amp;gt; a,
+              .nav-menu &amp;amp;gt; li &amp;amp;gt; .menu-group-title,
+              #navMenu &amp;amp;gt; li &amp;amp;gt; .menu-group-title {
                 flex: 1 !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; a [class*="arrow"],
+              nav li:has(.sub-menu) &amp;amp;gt; a [class*="chevron"],
+              nav li:has(.sub-menu) &amp;amp;gt; a [class*="arrow"],
+              #navMenu li:has(.sub-menu) &amp;amp;gt; a [class*="chevron"],
+              #navMenu li:has(.sub-menu) &amp;amp;gt; a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -620,9 +620,9 @@
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) &amp;amp;gt; .sub-menu,
+              nav li:has(.sub-menu) &amp;amp;gt; .sub-menu,
+              .navbar li:has(.sub-menu) &amp;amp;gt; .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
@@ -642,10 +642,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &gt; 768) {
+                if (window.innerWidth &amp;amp;gt; 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&amp;amp;gt; btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&amp;amp;gt; {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -668,7 +668,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope &amp;amp;gt; a') || li.querySelector(':scope &amp;amp;gt; .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -728,7 +728,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' &amp;amp;amp;&amp;amp;amp; mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -750,7 +750,7 @@
 
 <!-- Zappy Attribution Header -->
 <div id="zappy-attribution-header" class="zappy-header" style="display: none;">
-  <p>Happily created by&amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+  <p>Happily created by&amp;amp;amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
 </div>
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
@@ -775,7 +775,7 @@
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">Home</a></li><li><a href="/about">אודות</a></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/prostate-alternative-treatment" class="nav-link">טיפול בפרוסטטה</a></li><li><a href="/womens-urinary-problems" class="">בעיות שתן נשים</a></li><li><a href="/recommendations" class="">סרטוני עדויות פרוסטטה</a></li><li><a href="/health-maintenance-tips">Health-maintenance-tips</a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/prostate-alternative-treatment" class="nav-link">טיפול בפרוסטטה</a></li><li><a href="/womens-urinary-problems" class="">בעיות שתן נשים</a></li><li><a href="/recommendations" class="">סרטוני עדויות פרוסטטה</a></li><li><a href="/health-maintenance-tips">Health-maintenance-tips</a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
@@ -846,7 +846,7 @@
 <section id="layout-1770217559449" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 80px 0; text-align: center; direction: rtl;" data-component-id="basic-centered-text">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
   <h2 style="font-size: 36px; font-weight: 700; color: #4A4A4A; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;">תסמינים נפוצים של בעיות ערמונית</h2>
-  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;"><font color="#1a1a1a">הגברים שסובלים מבעיות בערמונית או בתפקוד של השלפוחית עלולים להיתקל בסימפטומים שונים. הכרת התסמינים העיקריים עוזרת לזהות את הבעיה מוקדם ולקבל טיפול מתאים. התסמינים הנפוצים כוללים:<br></br><br></br>* זרימה חלשה או קטועה של שתן - קושי להתחיל במתן שתן או הפסקות בזרימה.  <br></br>* תכיפות מתן שתן, כולל בלילה - צורך ללכת לשירותים יותר פעמים מהרגיל, גם בלילה.  <br></br>* תחושת התרוקנות לא מלאה - לאחר מתן שתן, יש תחושה שהשלפוחית עדיין מלאה.  <br></br>* קושי להתחיל במתן שתן - תחושת "דחיפה" חלשה או עיכוב בתחילת הזרימה.  <br></br>* דחיפות פתאומית - תחושת צורך דחוף, לפעמים עם טפטוף קטן או בריחת שתן.  <br></br><br></br>💡 טיפ: אם אחד או יותר מהסימפטומים האלו מופיעים אצלך באופן קבוע, כדאי לשקול הערכה מקצועית וטיפול טבעי מותאם אישית.</font></p>
+  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;"><font color="#1a1a1a">הגברים שסובלים מבעיות בערמונית או בתפקוד של השלפוחית עלולים להיתקל בסימפטומים שונים. הכרת התסמינים העיקריים עוזרת לזהות את הבעיה מוקדם ולקבל טיפול מתאים. התסמינים הנפוצים כוללים:<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>* זרימה חלשה או קטועה של שתן - קושי להתחיל במתן שתן או הפסקות בזרימה.  <br></br><br></br><br></br><br></br>* תכיפות מתן שתן, כולל בלילה - צורך ללכת לשירותים יותר פעמים מהרגיל, גם בלילה.  <br></br><br></br><br></br><br></br>* תחושת התרוקנות לא מלאה - לאחר מתן שתן, יש תחושה שהשלפוחית עדיין מלאה.  <br></br><br></br><br></br><br></br>* קושי להתחיל במתן שתן - תחושת "דחיפה" חלשה או עיכוב בתחילת הזרימה.  <br></br><br></br><br></br><br></br>* דחיפות פתאומית - תחושת צורך דחוף, לפעמים עם טפטוף קטן או בריחת שתן.  <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>💡 טיפ: אם אחד או יותר מהסימפטומים האלו מופיעים אצלך באופן קבוע, כדאי לשקול הערכה מקצועית וטיפול טבעי מותאם אישית.</font></p>
   </div>
 </section><section class="video-content-section visible" dir="rtl" data-zappy-component="true" id="ai-section-1769073063326-9gzcp3t" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s, transform 0.8s;">
   <div class="video-content-container">
@@ -879,8 +879,8 @@
 
 <section id="layout-1770218093904" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 80px 0; text-align: center; direction: rtl;" data-component-id="basic-centered-text">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-  <h2 style="font-size: 36px; font-weight: 700; color: #4A4A4A; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;">&amp;nbsp;שלפוחית רגיזה - מה זה ואיך משפיע</h2>
-  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">שלפוחית רגיזה עלולה לגרום לתחושת דחיפות פתאומית ולעיתים אפילו לדליפה קלה.  <br></br>הטיפול ההוליסטי מתמקד בהרפיית שרירי השלפוחית, שיפור זרימת השתן והקלה על תסמיני הדחיפות.<br></br></p>
+  <h2 style="font-size: 36px; font-weight: 700; color: #4A4A4A; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;">&amp;amp;amp;nbsp;שלפוחית רגיזה - מה זה ואיך משפיע</h2>
+  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">שלפוחית רגיזה עלולה לגרום לתחושת דחיפות פתאומית ולעיתים אפילו לדליפה קלה.  <br></br><br></br><br></br><br></br>הטיפול ההוליסטי מתמקד בהרפיית שרירי השלפוחית, שיפור זרימת השתן והקלה על תסמיני הדחיפות.<br></br><br></br><br></br><br></br></p>
   </div>
 </section>
 
@@ -919,7 +919,7 @@
 <section id="layout-1770218135975" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 80px 0; text-align: center; direction: rtl;" data-component-id="basic-centered-text">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
   <h2 style="font-size: 36px; font-weight: 700; color: #4A4A4A; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif;">שפיכה הפוכה - הסבר ופתרון</h2>
-  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">חלק מהגברים חווים שפיכה אחורית, שבה הזרע חוזר לשלפוחית במקום להפרשות החיצוניות.  <br></br>זו תופעה שיכולה להיות קשורה לשריר השוער הפנימי או לחסמים אחרים במערכת השתן.  <br></br>הגישה הטבעית כוללת תרגילים ומעקב שמסייעים במניעה ובהקלה.<br></br></p>
+  <p style="font-size: 20px; line-height: 1.6; color: #4A4A4A; opacity: 0.8; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">חלק מהגברים חווים שפיכה אחורית, שבה הזרע חוזר לשלפוחית במקום להפרשות החיצוניות.  <br></br><br></br><br></br><br></br>זו תופעה שיכולה להיות קשורה לשריר השוער הפנימי או לחסמים אחרים במערכת השתן.  <br></br><br></br><br></br><br></br>הגישה הטבעית כוללת תרגילים ומעקב שמסייעים במניעה ובהקלה.<br></br><br></br><br></br><br></br></p>
   </div>
 </section>
 
@@ -1036,7 +1036,7 @@
   מעקב ליווי ותמיכה בתהליך  
 
 </h2>
-          <p style="text-align: center">חשוב לשלב מעקב יחד עם טיפול טבעי.  <br></br>מעקב קבוע מאפשר לזהות בעיות בזמן ולכוון את הטיפול בצורה מותאמת אישית.</p>
+          <p style="text-align: center">חשוב לשלב מעקב יחד עם טיפול טבעי.  <br></br><br></br><br></br><br></br>מעקב קבוע מאפשר לזהות בעיות בזמן ולכוון את הטיפול בצורה מותאמת אישית.</p>
         </div>
     </div>
   </section>
@@ -1113,7 +1113,7 @@
 <a href="https://instagram.com/curing_herbs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972547899490" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <a href="https://youtube.com/@curing_herbs?si=57CESCr2zr3huTF3" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-<a href="https://tiktok.com/@@yonatanophirshlon?_r=1&amp;amp;_t=ZS-93MsmTytdfL" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div>
+<a href="https://tiktok.com/@@yonatanophirshlon?_r=1&amp;amp;amp;amp;_t=ZS-93MsmTytdfL" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1129,7 +1129,7 @@
           </div>
         </div>
         <div class="zappy-attribution">
-          <p>נוצר באמצעות&amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Zappy</a></p>
+          <p>נוצר באמצעות&amp;amp;amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Zappy</a></p>
         </div>
       </div>
     </footer>
@@ -1160,14 +1160,14 @@
         var header = document.getElementById('zappy-attribution-header');
         if (header) {
           // Use dynamic announcement content if available
-          if (data.announcement &amp;&amp; data.announcement.html) {
+          if (data.announcement &amp;amp;amp;&amp;amp;amp; data.announcement.html) {
             header.innerHTML = data.announcement.html;
           }
           // Apply fixed positioning styles inline (works for existing sites too)
           header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
           // Fix child elements that might have position: fixed from old CSS
           var children = header.querySelectorAll('*');
-          for (var i = 0; i &lt; children.length; i++) {
+          for (var i = 0; i &amp;amp;lt; children.length; i++) {
             children[i].style.position = 'static';
           }
           // Get header height
@@ -1175,9 +1175,9 @@
           // Find and fix navbar to be fixed as well (prevents gap at top of page)
           var navSelectors = ['nav', '.navbar', '.nav'];
           var navbar = null;
-          for (var j = 0; j &lt; navSelectors.length; j++) {
+          for (var j = 0; j &amp;amp;lt; navSelectors.length; j++) {
             navbar = document.querySelector(navSelectors[j]);
-            if (navbar &amp;&amp; navbar.id !== 'zappy-attribution-header') break;
+            if (navbar &amp;amp;amp;&amp;amp;amp; navbar.id !== 'zappy-attribution-header') break;
             navbar = null;
           }
           if (navbar) {
