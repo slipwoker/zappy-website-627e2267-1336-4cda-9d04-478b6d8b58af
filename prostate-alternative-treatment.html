@@ -298,8 +298,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &amp;gt; li &amp;gt; .menu-group-title,
-            #navMenu &amp;gt; li &amp;gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -313,13 +313,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &amp;gt; li &amp;gt; .menu-group-title:hover,
-            #navMenu &amp;gt; li &amp;gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &amp;gt; .sub-menu {
+            li:has(.menu-group-title):hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -328,7 +328,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &amp;gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -381,9 +381,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &amp;gt; .sub-menu,
-            nav li:hover &amp;gt; .sub-menu,
-            .navbar li:hover &amp;gt; .sub-menu {
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -421,8 +421,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &amp;gt; li &amp;gt; .menu-group-title,
-            #navMenu &amp;gt; li &amp;gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -436,8 +436,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &amp;gt; li &amp;gt; .menu-group-title:hover,
-            #navMenu &amp;gt; li &amp;gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -478,18 +478,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &amp;gt; .sub-menu,
-              nav li:hover &amp;gt; .sub-menu,
-              .navbar li:hover &amp;gt; .sub-menu {
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &amp;gt; .sub-menu.mobile-expanded,
-              nav li &amp;gt; .sub-menu.mobile-expanded,
-              .navbar li &amp;gt; .sub-menu.mobile-expanded {
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -515,23 +515,23 @@
               }
               
               /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &amp;gt; a,
-              nav li:has(.sub-menu) &amp;gt; a,
-              .navbar li:has(.sub-menu) &amp;gt; a,
-              .nav-menu &amp;gt; li &amp;gt; .menu-group-title,
-              #navMenu &amp;gt; li &amp;gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 flex: 1 !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &amp;gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &amp;gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &amp;gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &amp;gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &amp;gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &amp;gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &amp;gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &amp;gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -569,9 +569,9 @@
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &amp;gt; .sub-menu,
-              nav li:has(.sub-menu) &amp;gt; .sub-menu,
-              .navbar li:has(.sub-menu) &amp;gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
@@ -591,10 +591,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &amp;gt; 768) {
+                if (window.innerWidth > 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&amp;gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&amp;gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -617,7 +617,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &amp;gt; a') || li.querySelector(':scope &amp;gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -677,7 +677,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;amp;&amp;amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -776,7 +776,7 @@ section[data-zappy-section] { display: block !important; grid-template-columns: 
 }
 /* Hero container fixes - contain absolute images */
 [class*="hero"], [id*="hero"] { position: relative !important; overflow: hidden !important; }
-[class*="hero"] &amp;gt; .container, [id*="hero"] &amp;gt; .container { position: relative; z-index: 2; }
+[class*="hero"] > .container, [id*="hero"] > .container { position: relative; z-index: 2; }
 .hero-image-wrapper, [class*="image-wrapper"] { position: relative !important; overflow: hidden !important; }
 /* Prevent hero positioning on non-hero page images */
 img[data-no-hero-position] { position: static !important; }
@@ -808,7 +808,7 @@ img[data-no-hero-position] { position: static !important; }
 
 <!-- Zappy Attribution Header -->
 <div id="zappy-attribution-header" class="zappy-header" style="display: none;">
-  <p>Happily created by&amp;amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
 </div>
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
@@ -819,21 +819,21 @@ img[data-no-hero-position] { position: static !important; }
       </div>
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
-        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
-        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
       
-      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/prostate-alternative-treatment" class="nav-link">טיפול בפרוסטטה</a></li><li><a href="/womens-urinary-problems" class>בעיות שתן נשים</a></li><li><a href="/recommendations" class>סרטוני עדויות פרוסטטה</a></li><li><a href="/health-maintenance-tips">Health-maintenance-tips</a></li><li><a href="/exceptional-stories" class>סיפורים יוצאי דופן</a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
+      <ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">Home</a></li><li><a href="/about">אודות</a></li><li><a href="/male-urinary-issues">בעיות שתן- גברים</a></li><li><a href="/prostate-alternative-treatment" class="nav-link">טיפול בפרוסטטה</a></li><li><a href="/womens-urinary-problems" class="">בעיות שתן נשים</a></li><li><a href="/recommendations" class="">סרטוני עדויות פרוסטטה</a></li><li><a href="/health-maintenance-tips">Health-maintenance-tips</a></li><li class="nav-cta-item-mobile"><a href="/contact">צור קשר</a></li></ul>
       
       <div class="nav-cta-container">
         <li class="nav-cta-item">
@@ -884,137 +884,13 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
-
-
-<section id="layout-1771246581805" class="layout-section hero-section" data-zappy-component="true" style="width: 100vw; margin-left: calc(-50vw + 50%); height: 100vh; min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; direction: rtl; overflow: hidden; box-sizing: border-box;" data-component-id="hero-fullscreen-bg">
-  <style>
-    .hero-bg-container img.hero-background-image,
-    .hero-bg-container img[data-hero-background="true"] {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center !important;
-      display: block !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-    #layout-1771246581805 button,
-    #layout-1771246581805 a,
-    #layout-1771246581805 .btn,
-    #layout-1771246581805 [class*="btn"],
-    #layout-1771246581805 [data-element-type="button"],
-    #layout-1771246581805 h1,
-    #layout-1771246581805 h2,
-    #layout-1771246581805 h3,
-    #layout-1771246581805 h4,
-    #layout-1771246581805 p {
-      pointer-events: auto !important;
-      position: relative;
-    }
-  </style>
-  <div class="hero-bg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
-    <img data-placeholder="hero-bg-1771246581805" data-context="Hero background image for כותרת שלך כאן" data-zappy-editable-image="true" data-element-type="image" data-hero-background="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFA500;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23E8E8E8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3EHero Background Image%3C/text%3E%3C/svg%3E" alt="Hero background" style="width: 100%; height: 100%; object-fit: cover; object-position: center; cursor: pointer; display: block;" class="layout-placeholder-image zappy-editable-image hero-background-image">
-  </div>
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 2; pointer-events: none;"></div>
-  <div class="container" style="position: relative; z-index: 3; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 1.5rem; text-align: center; pointer-events: none; box-sizing: border-box;">
-    <h1 style="font-size: 56px; font-weight: 700; color: #FFFFFF; margin-bottom: 24px; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: auto;">כותרת שלך כאן</h1>
-    <h3 style="font-size: 26px; font-weight: 400; color: #FFFFFF; opacity: 0.9; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.3); pointer-events: auto;">כותרת משנה שלך כאן</h3>
-  </div>
-</section>
-
-<section id="layout-1771246590776" class="layout-section hero-section" data-zappy-component="true" style="width: 100vw; margin-left: calc(-50vw + 50%); min-height: 500px; position: relative; display: flex; align-items: center; justify-content: center; direction: rtl; overflow: hidden; box-sizing: border-box;" data-component-id="hero-fullwidth-bg">
-  <!-- CSS override for hero background images and content elements - ensures correct styling -->
-  <style>
-    .hero-bg-container img.hero-background-image,
-    .hero-bg-container img[data-hero-background="true"] {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center !important;
-      display: block !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-    /* Ensure interactive elements in hero section are clickable */
-    #layout-1771246590776 button,
-    #layout-1771246590776 a,
-    #layout-1771246590776 .btn,
-    #layout-1771246590776 [class*="btn"],
-    #layout-1771246590776 [data-element-type="button"],
-    #layout-1771246590776 h1,
-    #layout-1771246590776 h2,
-    #layout-1771246590776 h3,
-    #layout-1771246590776 h4,
-    #layout-1771246590776 p {
-      pointer-events: auto !important;
-      position: relative;
-    }
-  </style>
-  <!-- Background Image Container - full bleed -->
-  <div class="hero-bg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
-    <img data-placeholder="hero-bg-1771246590776" data-context="Hero background image for כותרת שלך כאן" data-zappy-editable-image="true" data-element-type="image" data-hero-background="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='800'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFA500;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23E8E8E8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3EHero Background Image%3C/text%3E%3C/svg%3E" alt="Hero background" style="width: 100%; height: 100%; object-fit: cover; object-position: center; cursor: pointer; display: block;" class="layout-placeholder-image zappy-editable-image hero-background-image">
-  </div>
-  
-  <!-- Dark Overlay for text readability (pointer-events: none allows clicking through to image) -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 2; pointer-events: none;"></div>
-  
-  <!-- Content (pointer-events: none on container, auto on interactive elements via CSS above) -->
-  <div class="container" style="position: relative; z-index: 3; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 1.5rem; text-align: center; pointer-events: none; box-sizing: border-box;">
-    <h1 style="font-size: 48px; font-weight: 700; color: #FFFFFF; margin-bottom: 20px; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: auto;">כותרת שלך כאן</h1>
-    <h3 style="font-size: 24px; font-weight: 400; color: #FFFFFF; opacity: 0.9; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.3); pointer-events: auto;">כותרת משנה שלך כאן</h3>
-  </div>
-</section>
-
-<section id="layout-1771246595106" class="layout-section hero-section" data-zappy-component="true" style="width: 100vw; margin-left: calc(-50vw + 50%); height: 100vh; min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; direction: rtl; overflow: hidden; box-sizing: border-box;" data-component-id="hero-fullscreen-bg">
-  <style>
-    .hero-bg-container img.hero-background-image,
-    .hero-bg-container img[data-hero-background="true"] {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center !important;
-      display: block !important;
-      max-width: none !important;
-      margin: 0 !important;
-      border-radius: 0 !important;
-    }
-    #layout-1771246595106 button,
-    #layout-1771246595106 a,
-    #layout-1771246595106 .btn,
-    #layout-1771246595106 [class*="btn"],
-    #layout-1771246595106 [data-element-type="button"],
-    #layout-1771246595106 h1,
-    #layout-1771246595106 h2,
-    #layout-1771246595106 h3,
-    #layout-1771246595106 h4,
-    #layout-1771246595106 p {
-      pointer-events: auto !important;
-      position: relative;
-    }
-  </style>
-  <div class="hero-bg-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
-    <img data-placeholder="hero-bg-1771246595106" data-context="Hero background image for כותרת שלך כאן" data-zappy-editable-image="true" data-element-type="image" data-hero-background="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFA500;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23E8E8E8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3EHero Background Image%3C/text%3E%3C/svg%3E" alt="Hero background" style="width: 100%; height: 100%; object-fit: cover; object-position: center; cursor: pointer; display: block;" class="layout-placeholder-image zappy-editable-image hero-background-image">
-  </div>
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 2; pointer-events: none;"></div>
-  <div class="container" style="position: relative; z-index: 3; max-width: 1200px; width: 100%; margin: 0 auto; padding: 80px 1.5rem; text-align: center; pointer-events: none; box-sizing: border-box;">
-    <h1 style="font-size: 56px; font-weight: 700; color: #FFFFFF; margin-bottom: 24px; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.3); pointer-events: auto;">כותרת שלך כאן</h1>
-    <h3 style="font-size: 26px; font-weight: 400; color: #FFFFFF; opacity: 0.9; max-width: 700px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.3); pointer-events: auto;">כותרת משנה שלך כאן</h3>
-  </div>
-</section>
-
-
-
-
-
-<section id="layout-1770644474666" class="layout-section zappy-editable-bg-image" data-zappy-component="true" style="width: 100%; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #FF6666; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(&amp;amp;quot;assets/business-general-service-upload-1770571746051.webp&amp;amp;quot;); background-size: cover; background-position: center; background-repeat: no-repeat; --zappy-bg-overlay: rgba(0, 0, 0, 0); --zappy-bg-image: url(&amp;amp;quot;assets/business-general-service-upload-1770571746051.webp&amp;amp;quot;)" data-component-id="empty-section" data-zappy-bg-type="image" data-zappy-bg-color data-zappy-bg-image="assets/business-general-service-upload-1770571746051.webp" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="0" data-zappy-bg-video-type data-zappy-bg-video-url>
+<section id="layout-1770644474666" class="layout-section zappy-editable-bg-image" data-zappy-component="true" style="width: 100%; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #FF6666; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(&quot;assets/business-general-service-upload-1770571746051.webp&quot;); background-size: cover; background-position: center; background-repeat: no-repeat; --zappy-bg-overlay: rgba(0, 0, 0, 0); --zappy-bg-image: url(&quot;assets/business-general-service-upload-1770571746051.webp&quot;)" data-component-id="empty-section" data-zappy-bg-type="image" data-zappy-bg-color="" data-zappy-bg-image="assets/business-general-service-upload-1770571746051.webp" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="0" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2">
-    <p style="font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;"></p><h1><font color="#1a1a1a">&amp;amp;nbsp; טיפול אלטרנטיבי בפרוסטטה&amp;amp;nbsp;&amp;amp;nbsp;</font><div class="zappy-inserted-element" id="zappy-element-1770646402270-7wf1jsj6t" data-element-id="zappy-element-1770646402270-7wf1jsj6t" data-element-type="h2" style="max-width: 1152px; margin: 20px auto; text-align: center; width: 100%;"><h2 class="font-bold" style="color: rgb(30, 16, 16); text-align: center; width: 100%;" data-element-type="h2" data-element-id="zappy-element-1770646402270-7wf1jsj6t" id="zappy-element-1770646402270-7wf1jsj6t">
+    <p style="font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;"></p><h1><font color="#1a1a1a">&nbsp; טיפול אלטרנטיבי בפרוסטטה&nbsp;&nbsp;</font><div class="zappy-inserted-element" id="zappy-element-1770646402270-7wf1jsj6t" data-element-id="zappy-element-1770646402270-7wf1jsj6t" data-element-type="h2" style="max-width: 1152px; margin: 20px auto; text-align: center; width: 100%;"><h2 class="font-bold" style="color: rgb(30, 16, 16); text-align: center; width: 100%;" data-element-type="h2" data-element-id="zappy-element-1770646402270-7wf1jsj6t" id="zappy-element-1770646402270-7wf1jsj6t">
 
 רפואה טבעית לערמונית מוגדלת.
 
-<br><br><br><br></h2><div class="zappy-inserted-element" id="zappy-element-1770646451713-io64dhw6h" data-element-id="zappy-element-1770646451713-io64dhw6h" data-element-type="paragraph" style="max-width: 1152px; margin: 20px auto; text-align: center; width: 100%;"><p style="font-size: 1rem; color: rgb(74, 74, 74); text-align: center; width: 100%;" data-element-type="paragraph" data-element-id="zappy-element-1770646451713-io64dhw6h" id="zappy-element-1770646451713-io64dhw6h">&amp;amp;nbsp; פתרון טבעי להפרעות במתן השתן הנובעות מערמונית מוגדלת. <br><br><br><br>החזירו לעצמכם את איכות החיים ללא תלות בתרופות או התערבות כירורגית, באמצעות רפואה סינית וצמחי מרפא.&amp;amp;nbsp;&amp;amp;nbsp;</p><div class="zappy-inserted-element" id="zappy-element-1770646464916-67yplls3u" data-element-id="zappy-element-1770646464916-67yplls3u" data-element-type="button" style="max-width: 1152px; margin: 20px auto; text-align: center; display: flex; justify-content: center;"><a href="https://yonatan-shlonski.co.il/contact" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-style: solid; border-width: 2px; border-image: initial; background-color: rgb(255, 165, 0) !important; border-color: rgb(255, 165, 0) !important; color: var(--light-text, #ffffff) !important; width: auto !important; flex: 0 0 auto !important; cursor: pointer !important;" data-element-type="button" data-text-color="light" data-element-id="zappy-element-1770646464916-67yplls3u" id="zappy-element-1770646464916-67yplls3u" data-original-href="https://yonatan-shlonski.co.il/contact" target="_blank" rel="noopener noreferrer">לחץ כאן</a></div></div></div></h1><p></p>
+<br></h2><div class="zappy-inserted-element" id="zappy-element-1770646451713-io64dhw6h" data-element-id="zappy-element-1770646451713-io64dhw6h" data-element-type="paragraph" style="max-width: 1152px; margin: 20px auto; text-align: center; width: 100%;"><p style="font-size: 1rem; color: rgb(74, 74, 74); text-align: center; width: 100%;" data-element-type="paragraph" data-element-id="zappy-element-1770646451713-io64dhw6h" id="zappy-element-1770646451713-io64dhw6h">&nbsp; פתרון טבעי להפרעות במתן השתן הנובעות מערמונית מוגדלת. <br>החזירו לעצמכם את איכות החיים ללא תלות בתרופות או התערבות כירורגית, באמצעות רפואה סינית וצמחי מרפא.&nbsp;&nbsp;</p><div class="zappy-inserted-element" id="zappy-element-1770646464916-67yplls3u" data-element-id="zappy-element-1770646464916-67yplls3u" data-element-type="button" style="max-width: 1152px; margin: 20px auto; text-align: center; display: flex; justify-content: center;"><a href="https://yonatan-shlonski.co.il/contact" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-style: solid; border-width: 2px; border-image: initial; background-color: rgb(255, 165, 0) !important; border-color: rgb(255, 165, 0) !important; color: var(--light-text, #ffffff) !important; width: auto !important; flex: 0 0 auto !important; cursor: pointer !important;" data-element-type="button" data-text-color="light" data-element-id="zappy-element-1770646464916-67yplls3u" id="zappy-element-1770646464916-67yplls3u" data-original-href="https://yonatan-shlonski.co.il/contact" target="_blank" rel="noopener noreferrer">לחץ כאן</a></div></div></div></h1><p></p>
   </div>
 <div class="zappy-bg-edit-indicator" style="position: absolute !important; top: 10px !important; left: 10px !important; z-index: 9999 !important; pointer-events: auto !important; opacity: 0.85 !important; background: rgba(97, 97, 255, 0.9) !important; color: white !important; padding: 6px 12px !important; border-radius: 6px !important; font-size: 12px !important; font-weight: 500 !important; cursor: pointer !important; font-family: system-ui, -apple-system, sans-serif !important; line-height: 1 !important;">✏️ Edit Background</div></section>
 
@@ -1051,15 +927,15 @@ img[data-no-hero-position] { position: static !important; }
 
 
   <!-- Intro Section -->
-  <section class="section" id="intro" style="background-color: #B7D5E1; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #B7D5E1" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#B7D5E1" data-zappy-bg-image data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url>
+  <section class="section" id="intro" style="background-color: #B7D5E1; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #B7D5E1" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#B7D5E1" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
     <div class="container" style="position: relative; z-index: 2">
       <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
         <article class="card" style="background-color: #ffffff !important; padding: 30px; border-radius: 8px; border-top: 4px solid #806060;">
           <h2 style="color: #303030 !important; margin-bottom: 20px;"><font color="#171799">מתי פונים לטיפול טבעי?</font></h2>
           <ul style="list-style-type: none; padding: 0; color: #4a5568 !important;">
             <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> כשהתרופות גורמות לתופעות לוואי</li>
-            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> כשרוצים להימנע מניתוח פולשני<br><br><br><br><br><br><br><br></li>
-            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> במצבים אחרי ניתוח שלא עזר מספיק&amp;amp;nbsp;</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> כשרוצים להימנע מניתוח פולשני<br><br></li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> במצבים אחרי ניתוח שלא עזר מספיק&nbsp;</li>
             <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span style="color: #806060 !important; margin-left: 10px;">✔</span> כשיש רצון לטפל בשורש הבעיה</li>
           </ul>
         </article>
@@ -1067,7 +943,7 @@ img[data-no-hero-position] { position: static !important; }
           <h2 style="color: #303030 !important; margin-bottom: 20px;"><font color="#000080">הגישה שלי בנקודה בזמן</font></h2>
           <p style="color: #4a5568 !important; line-height: 1.6; margin-bottom: 20px;">
             בעיות פרוסטטה הן מהגורמים המרכזיים לפגיעה באיכות החיים של גברים – קימה לילית, זרם שתן חלש, ותחושת חוסר התרוקנות. בקליניקה, אני מתמחה במתן פתרון טבעי לבעיות שתן הנובעות מהגדלת פרוסטטה שפירה בגישה הוליסטית.
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>לצד הגישה הקונבנציונאלית, קיים <b>פתרון אלטרנטיבי לפרוסטטה</b>המציע טיפול טבעי, לא פולשני, וללא תלות בתרופות או בניתוחים.<br><br><br><br><br><br><br><br>בקליניקה שלי אני מלווה גברים המחפשים <b>טיפול אלטרנטיבי בפרוסטטה,</b>המבוסס על רפואה סינית, צמחי מרפא וראיה הוליסטית של הגוף.</p>
+          <br><br><br><br>לצד הגישה הקונבנציונאלית, קיים <b>פתרון אלטרנטיבי לפרוסטטה</b>המציע טיפול טבעי, לא פולשני, וללא תלות בתרופות או בניתוחים.<br><br>בקליניקה שלי אני מלווה גברים המחפשים <b>טיפול אלטרנטיבי בפרוסטטה,</b>המבוסס על רפואה סינית, צמחי מרפא וראיה הוליסטית של הגוף.</p>
           
         </div>
       </div>
@@ -1075,25 +951,25 @@ img[data-no-hero-position] { position: static !important; }
   </section>
 
   <!-- Symptoms Grid -->
-  <section class="section" id="symptoms" style="background-color: #ece7a2; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #ece7a2" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#ece7a2" data-zappy-bg-image data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url>
+  <section class="section" id="symptoms" style="background-color: #ece7a2; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #ece7a2" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#ece7a2" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
     <div class="container" style="position: relative; z-index: 2">
       <h2 style="text-align: center; color: #303030 !important; margin-bottom: 40px;"><font color="#000080">תסמינים נפוצים המעידים על הצורך בטיפול</font></h2>
       <div class="services-grid zappy-preserve-css-grid" style="display: grid; gap: 20px; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" id="zappy-auto-grid-1770283609873-qed1yb" data-zappy-auto-grid="true" data-original-item-width="316" data-original-gap="32px" data-zappy-explicit-columns="true"><div class="card" style="background-color: #f8f9fa !important; padding: 20px; text-align: center; border-radius: 8px; transition: transform 0.3s;">
-          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class>💧</div>
-          <h3 style="font-size: 1.1rem; color: #303030 !important;" class>זרם שתן חלש</h3>
-          <p style="font-size: 0.9rem; color: #4a5568 !important;" class>קושי בהתחלת השתנה או זרם מקוטע</p>
+          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class="">💧</div>
+          <h3 style="font-size: 1.1rem; color: #303030 !important;" class="">זרם שתן חלש</h3>
+          <p style="font-size: 0.9rem; color: #4a5568 !important;" class="">קושי בהתחלת השתנה או זרם מקוטע</p>
         </div><div class="card" style="background-color: #f8f9fa !important; padding: 20px; text-align: center; border-radius: 8px;">
-          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class>🌙</div>
-          <h3 style="font-size: 1.1rem; color: #303030 !important;" class>קימה לילית</h3>
-          <p style="font-size: 0.9rem; color: #4a5568 !important;" class>התעוררות מרובה בלילה למתן שתן</p>
+          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class="">🌙</div>
+          <h3 style="font-size: 1.1rem; color: #303030 !important;" class="">קימה לילית</h3>
+          <p style="font-size: 0.9rem; color: #4a5568 !important;" class="">התעוררות מרובה בלילה למתן שתן</p>
         </div><div class="card" style="background-color: #f8f9fa !important; padding: 20px; text-align: center; border-radius: 8px;">
-          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class>⏱️</div>
-          <h3 style="font-size: 1.1rem; color: #303030 !important;" class>דחיפות ותכיפות</h3>
-          <p style="font-size: 0.9rem; color: #4a5568 !important;" class>צורך תכוף ופתאומי להתפנות</p>
+          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class="">⏱️</div>
+          <h3 style="font-size: 1.1rem; color: #303030 !important;" class="">דחיפות ותכיפות</h3>
+          <p style="font-size: 0.9rem; color: #4a5568 !important;" class="">צורך תכוף ופתאומי להתפנות</p>
         </div><div class="card" style="background-color: #f8f9fa !important; padding: 20px; text-align: center; border-radius: 8px;">
-          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class>⚠️</div>
-          <h3 style="font-size: 1.1rem; color: rgb(48, 48, 48) !important;" class>קושי בהתחלת השתנה&amp;amp;nbsp;</h3>
-          <p style="font-size: 0.9rem; color: #4a5568 !important;" class>המצריך טיפול תרופתי למניעת עצירת שתן.</p>
+          <div style="font-size: 2rem; margin-bottom: 15px; color: #b0a0a0 !important;" class="">⚠️</div>
+          <h3 style="font-size: 1.1rem; color: rgb(48, 48, 48) !important;" class="">קושי בהתחלת השתנה&nbsp;</h3>
+          <p style="font-size: 0.9rem; color: #4a5568 !important;" class="">המצריך טיפול תרופתי למניעת עצירת שתן.</p>
         </div></div>
     </div>
   </section>
@@ -1103,7 +979,7 @@ img[data-no-hero-position] { position: static !important; }
 
 
   <!-- Treatment Process -->
-  <section class="section" id="process" style="background-color: #B7D5E1; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #B7D5E1" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#B7D5E1" data-zappy-bg-image data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url>
+  <section class="section" id="process" style="background-color: #B7D5E1; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #B7D5E1" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#B7D5E1" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
     <div class="container" style="position: relative; z-index: 2">
       <h2 style="text-align: center; color: #303030 !important; margin-bottom: 10px;"><font color="#000080">איך נראה הטיפול אצל יהונתן שלונסקי?</font></h2>
       <p style="text-align: center; color: #4a5568 !important; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;"><font color="#000080">הטיפול נבנה באופן אישי וכולל שילוב של אבחון מעמיק ורפואה טבעית</font></p>
@@ -1144,7 +1020,7 @@ img[data-no-hero-position] { position: static !important; }
 
 
 
-<section id="layout-1770551218127" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; background-color: #ffffff; --zappy-bg-color: #ffffff" data-component-id="collection-faq" data-zappy-bg-type="color" data-zappy-bg-color="#ffffff" data-zappy-bg-image data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url>
+<section id="layout-1770551218127" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; background-color: #ffffff; --zappy-bg-color: #ffffff" data-component-id="collection-faq" data-zappy-bg-type="color" data-zappy-bg-color="#ffffff" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
   <style style="position: relative; z-index: 2">
     #layout-1770551218127 details summary { cursor: pointer; list-style: none; }
     #layout-1770551218127 details summary::-webkit-details-marker { display: none; }
@@ -1154,28 +1030,28 @@ img[data-no-hero-position] { position: static !important; }
   </style>
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2">
     
-    <div class="faq-grid zappy-vertical-grid zappy-preserve-css-grid" style="display: grid; gap: 16px; max-width: 800px; margin: 0px auto; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" data-zappy-auto-grid="true" data-original-item-width="392" data-original-gap="16px" id="zappy-auto-grid-1770558454619-c4d8hc"><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class>
+    <div class="faq-grid zappy-vertical-grid zappy-preserve-css-grid" style="display: grid; gap: 16px; max-width: 800px; margin: 0px auto; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" data-zappy-auto-grid="true" data-original-item-width="392" data-original-gap="16px" id="zappy-auto-grid-1770558454619-c4d8hc"><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
-          <span style class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span style><h3 class="zappy-editable">&amp;amp;nbsp; האם הטיפול הטבעי בפרוסטטה עובד?&amp;amp;nbsp;&amp;amp;nbsp;</h3></span></span></span></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="" class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span style=""><h3 class="zappy-editable">&nbsp; האם הטיפול הטבעי בפרוסטטה עובד?&nbsp;&nbsp;</h3></span></span></span></span>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
-        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">עבור 80-90% מהגברים- כן.<br><br><br><br><br><br><br><br>כאשר התסמינים אינם מצב חירום כמו גידול סרטני המצריך טיפול קונבנציונאלי,<br><br><br><br><br><br><br><br>טיפול טבעי מאפשר לגוף לחזור לאיזון בהדרגה<br><br><br><br><br><br><br><br>ולהפחית תכיפות, קימה לילית וזרם שתן חלש.<br><br><br><br><br><br><br><br>ההצלחה תלויה בהתאמה אישית ובשיתוף פעולה של המטופל.&amp;amp;nbsp; &amp;amp;nbsp;</div>
-      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class>
+        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">עבור 80-90% מהגברים- כן.<br><br>כאשר התסמינים אינם מצב חירום כמו גידול סרטני המצריך טיפול קונבנציונאלי,<br><br>טיפול טבעי מאפשר לגוף לחזור לאיזון בהדרגה<br><br>ולהפחית תכיפות, קימה לילית וזרם שתן חלש.<br><br>ההצלחה תלויה בהתאמה אישית ובשיתוף פעולה של המטופל.&nbsp; &nbsp;</div>
+      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
-          <span style><h3 class="zappy-editable">האם הטיפול בפרוסטטה מתאים למי שנוטל תרופות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style=""><h3 class="zappy-editable">האם הטיפול בפרוסטטה מתאים למי שנוטל תרופות?</h3></span>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">
           
 
-בהחלט!&amp;amp;nbsp;<br><br><br><br><br><br><br><br>טיפול טבעי בפרוסטטה יכול להשתלב עם טיפול תרופתי.
+בהחלט!&nbsp;<br><br>טיפול טבעי בפרוסטטה יכול להשתלב עם טיפול תרופתי.
 
 
         </div>
-      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class>
+      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
-          <span style><h3 class="zappy-editable">האם אפשר לטפל בפרוסטטה ולרדת מתרופות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style=""><h3 class="zappy-editable">האם אפשר לטפל בפרוסטטה ולרדת מתרופות?</h3></span>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 24px 20px; border-right: 3px solid #FFA500; padding-right: 21px; margin: 0 24px 20px; font-size: 16px; line-height: 1.7; color: #4A4A4A; opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">
           
@@ -1184,32 +1060,32 @@ img[data-no-hero-position] { position: static !important; }
 
 
         </div>
-      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class>
+      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="cursor: text;"><h3 class="zappy-editable">האם הטיפול הטבעי יכול להחליף ניתוח?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
-        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">לרוב כן!<br><br><br><br><br><br><br><br>אך לא תמיד, ולא לכל אחד.<br><br><br><br><br><br><br><br>במקרים מסוימים הוא מהווה:<br><br><br><br><br><br><br><br>- חלופה לפני החלטה על ניתוח<br><br><br><br><br><br><br><br>- טיפול משלים<br><br><br><br><br><br><br><br>- דרך להפחתת תסמינים ולשיפור איכות החיים לאחר כשלון ניתוח&amp;amp;nbsp;&amp;amp;nbsp;</div>
-      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class>
+        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">לרוב כן!<br><br>אך לא תמיד, ולא לכל אחד.<br><br>במקרים מסוימים הוא מהווה:<br><br>- חלופה לפני החלטה על ניתוח<br><br>- טיפול משלים<br><br>- דרך להפחתת תסמינים ולשיפור איכות החיים לאחר כשלון ניתוח&nbsp;&nbsp;</div>
+      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="cursor: text;"><h3 class="zappy-editable">כבר עשיתי ניתוח והמצב הורע -יש מה לעשות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
-        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">בהחלט כן- אל יאוש!<br><br><br><br><br><br><br><br>ניתן לראות לכך עדויות מצולמות בדף העדויות.<br><br><br><br><br><br><br><br>הרעה לאחר ניתוח ניתנת לשיפור!&amp;amp;nbsp;לגוף יכולות ריפוי מהירות יותר ממה שנדמה לנו.</div>
-      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class>
+        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">בהחלט כן- אל יאוש!<br><br>ניתן לראות לכך עדויות מצולמות בדף העדויות.<br><br>הרעה לאחר ניתוח ניתנת לשיפור!&nbsp;לגוף יכולות ריפוי מהירות יותר ממה שנדמה לנו.</div>
+      </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
-          <span style><h3 class="zappy-editable">
+          <span style=""><h3 class="zappy-editable">
 
 תוך כמה זמן רואים שינוי</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
-        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">ישנם מטופלים שחווים שינוי כבר בשבוע הראשון שאחרי הטיפול,<br><br><br><br><br><br><br><br>ישנם כאלה שלוקח מעט יותר זמן,על פי רוב במהלך החודש הראשון נראה שינוי.</div>
-      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class open>
+        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">ישנם מטופלים שחווים שינוי כבר בשבוע הראשון שאחרי הטיפול,<br><br>ישנם כאלה שלוקח מעט יותר זמן,על פי רוב במהלך החודש הראשון נראה שינוי.</div>
+      </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="" open="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
-          <span style="cursor: text;" class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable" style>למי הטיפול פחות מתאים?</span></span></span></span></span></span>
-          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="cursor: text;" class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable"><span class="zappy-editable" style="">למי הטיפול פחות מתאים?</span></span></span></span></span></span>
+          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
-        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">הטיפול אינו מיועד למצבי חירום רפואיים כגון סרטן,<br><br><br><br><br><br><br><br>הם כן מועילים כטיפול משלים במצבי סרטן -ויש לי בזה נסיון!אך לא כפתרון יחיד.</div>
+        <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="zappy-editable">הטיפול אינו מיועד למצבי חירום רפואיים כגון סרטן,<br><br>הם כן מועילים כטיפול משלים במצבי סרטן -ויש לי בזה נסיון!אך לא כפתרון יחיד.</div>
       </details></div>
   </div>
 </section>
@@ -1240,10 +1116,10 @@ img[data-no-hero-position] { position: static !important; }
   
 
   <!-- CTA Section -->
-  <section class="section" id="contact" style="background-color: #aad3e4; padding: 60px 0px; text-align: center; direction: rtl; color: rgb(255, 255, 255) !important; position: relative; overflow: hidden; --zappy-bg-color: #aad3e4" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#aad3e4" data-zappy-bg-image data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url>
+  <section class="section" id="contact" style="background-color: #aad3e4; padding: 60px 0px; text-align: center; direction: rtl; color: rgb(255, 255, 255) !important; position: relative; overflow: hidden; --zappy-bg-color: #aad3e4" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#aad3e4" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
     <div class="container" style="position: relative; z-index: 2">
       <h2 style="color: rgb(255, 255, 255) !important; margin-bottom: 20px;"><font color="#000000">להתחיל נכון - טיפול טבעי בפרוסטטה</font></h2>
-      <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; color: rgb(224, 224, 224) !important;"><font color="#000000"><span><font color="#000000" class id="zappy-drop-vk6rtg9rg">
+      <p style="font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; color: rgb(224, 224, 224) !important;"><font color="#000000"><span><font color="#000000" class="" id="zappy-drop-vk6rtg9rg">
         אם אתה מתמודד עם תסמינים של פרוסטטה ומחפש רפואה טבעית, אלטרנטיבית ולא פולשנית, צור קשר לפגישת אבחון דיסקרטית.
       </font></span></font></p>
       <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
@@ -1381,7 +1257,7 @@ img[data-no-hero-position] { position: static !important; }
 <a href="https://instagram.com/curing_herbs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 <a href="https://wa.me/972547899490" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <a href="https://youtube.com/@curing_herbs?si=57CESCr2zr3huTF3" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-element-id="element-ai-1769350528194-y7t3k1" data-element-type="link"><i class="fab fa-youtube"></i></a>
-<a href="https://tiktok.com/@@yonatanophirshlon?_r=1&amp;amp;amp;_t=ZS-93MsmTytdfL" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-element-id="element-ai-1769350528194-t9k4m2" data-element-type="link"><i class="fab fa-tiktok"></i></a></div>
+<a href="https://tiktok.com/@@yonatanophirshlon?_r=1&amp;_t=ZS-93MsmTytdfL" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-element-id="element-ai-1769350528194-t9k4m2" data-element-type="link"><i class="fab fa-tiktok"></i></a></div>
           <div class="footer-legal">
             <a href="/privacy" aria-label="מדיניות פרטיות">
               מדיניות פרטיות
@@ -1397,7 +1273,7 @@ img[data-no-hero-position] { position: static !important; }
           </div>
         </div>
         <div class="zappy-attribution">
-          <p>נוצר באמצעות&amp;amp;nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Zappy</a></p>
+          <p>נוצר באמצעות&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Zappy</a></p>
         </div>
       </div>
     </footer>
@@ -1426,14 +1302,14 @@ img[data-no-hero-position] { position: static !important; }
         var header = document.getElementById('zappy-attribution-header');
         if (header) {
           // Use dynamic announcement content if available
-          if (data.announcement &amp;amp;&amp;amp; data.announcement.html) {
+          if (data.announcement && data.announcement.html) {
             header.innerHTML = data.announcement.html;
           }
           // Apply fixed positioning styles inline (works for existing sites too)
           header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
           // Fix child elements that might have position: fixed from old CSS
           var children = header.querySelectorAll('*');
-          for (var i = 0; i &amp;lt; children.length; i++) {
+          for (var i = 0; i < children.length; i++) {
             children[i].style.position = 'static';
           }
           // Get header height
@@ -1441,9 +1317,9 @@ img[data-no-hero-position] { position: static !important; }
           // Find and fix navbar to be fixed as well (prevents gap at top of page)
           var navSelectors = ['nav', '.navbar', '.nav'];
           var navbar = null;
-          for (var j = 0; j &amp;lt; navSelectors.length; j++) {
+          for (var j = 0; j < navSelectors.length; j++) {
             navbar = document.querySelector(navSelectors[j]);
-            if (navbar &amp;amp;&amp;amp; navbar.id !== 'zappy-attribution-header') break;
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
             navbar = null;
           }
           if (navbar) {
