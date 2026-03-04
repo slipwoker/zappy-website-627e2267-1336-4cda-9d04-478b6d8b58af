@@ -452,8 +452,31 @@ window.onload = function() {
       } catch (e) {}
     }
 
+    function ensureLightboxCss(){
+      try {
+        var head = document.head || document.querySelector('head');
+        if (!head || head.querySelector('style[data-zappy-image-lightbox="true"]')) return;
+        var s = document.createElement('style');
+        s.setAttribute('data-zappy-image-lightbox','true');
+        s.textContent =
+          '.zappy-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;}'+
+          '.zappy-lightbox-content{position:relative;max-width:min(1100px,92vw);max-height:92vh;}'+
+          '.zappy-lightbox-content img{max-width:92vw;max-height:92vh;display:block;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);}'+
+          '.zappy-lightbox-close{position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:999px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer;}'+
+          '.zappy-lightbox-backdrop{position:absolute;inset:0;display:block;cursor:pointer;}'+
+          'input.zappy-lightbox-toggle{position:absolute;opacity:0;pointer-events:none;}'+
+          'label.zappy-lightbox-trigger{display:contents;}'+
+          'label.zappy-lightbox-trigger{cursor:zoom-in;}'+
+          'label.zappy-lightbox-trigger [data-zappy-zoom-wrapper="true"],'+
+          'label.zappy-lightbox-trigger img{cursor:zoom-in !important;}'+
+          'input.zappy-lightbox-toggle:checked + label.zappy-lightbox-trigger + .zappy-lightbox{display:flex;}';
+        head.appendChild(s);
+      } catch(e){}
+    }
+
     function initZappyPublishedLightboxes(){
       try {
+        ensureLightboxCss();
         // Repair orphaned labels (label has for=toggleId but input is missing)
         var orphanLabels = document.querySelectorAll('label.zappy-lightbox-trigger[for^="zappy-lightbox-toggle-"]');
         for (var i=0;i<orphanLabels.length;i++){
@@ -759,6 +782,128 @@ window.onload = function() {
   } catch (e) {}
 })();
 /* END ZAPPY_FAQ_ACCORDION_TOGGLE */
+
+
+/* ZAPPY_CONTACT_FORM_PREVENT_DEFAULT */
+(function(){
+  try {
+    function isContactForm(form) {
+      var cls=(form.className||'').toLowerCase();
+      var id=(form.id||'').toLowerCase();
+      var act=(form.getAttribute('action')||'').toLowerCase();
+      if(cls.indexOf('contact')!==-1||id.indexOf('contact')!==-1||act.indexOf('contact')!==-1) return true;
+      var sec=form.closest&&form.closest('section');
+      if(sec){
+        var sc=(sec.className||'').toLowerCase();
+        var si=(sec.id||'').toLowerCase();
+        if(sc.indexOf('contact')!==-1||si.indexOf('contact')!==-1) return true;
+      }
+      return false;
+    }
+
+    function showFormFeedback(form, msg, type) {
+      var old = form.querySelector('.zappy-form-feedback');
+      if (old) old.remove();
+
+      var bg = type==='success'?'#d4edda':type==='error'?'#f8d7da':'#d1ecf1';
+      var fg = type==='success'?'#155724':type==='error'?'#721c24':'#0c5460';
+      var bd = type==='success'?'#c3e6cb':type==='error'?'#f5c6cb':'#bee5eb';
+      var ic = type==='success'?'\u2705':type==='error'?'\u274C':'\u2139\uFE0F';
+
+      var el = document.createElement('div');
+      el.className = 'zappy-form-feedback';
+      el.setAttribute('role', 'alert');
+      el.style.cssText = 'padding:14px 18px;border-radius:8px;margin:12px 0 0;font-size:14px;line-height:1.5;background:'+bg+';color:'+fg+';border:1px solid '+bd+';text-align:center;font-family:inherit;';
+      el.innerHTML = '<span style="margin-inline-end:6px">'+ic+'</span>'+msg;
+
+      if (type === 'success') {
+        form.reset();
+        var formChildren = form.children;
+        for (var i = 0; i < formChildren.length; i++) {
+          if (formChildren[i] !== el) formChildren[i].style.display = 'none';
+        }
+        form.appendChild(el);
+        el.style.cssText += 'padding:32px 24px;font-size:16px;';
+      } else {
+        var btn = form.querySelector('button[type="submit"],input[type="submit"]');
+        if (btn) btn.parentNode.insertBefore(el, btn.nextSibling);
+        else form.appendChild(el);
+        setTimeout(function(){ if(el.parentElement) el.remove(); }, 8000);
+      }
+    }
+
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      if (!form || form.tagName !== 'FORM' || !isContactForm(form)) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      var origSubmit = form.submit;
+      form.submit = function(){ };
+
+      if (form.__zappySubmitting) return;
+      form.__zappySubmitting = true;
+
+      var oldFeedback = form.querySelector('.zappy-form-feedback');
+      if (oldFeedback) oldFeedback.remove();
+
+      var btn = form.querySelector('button[type="submit"],input[type="submit"]');
+      var origText = btn ? (btn.value || btn.textContent) : '';
+      if (btn) {
+        if (btn.tagName === 'INPUT') btn.value = 'Sending...';
+        else btn.textContent = 'Sending...';
+        btn.disabled = true;
+      }
+
+      var fd = new FormData(form);
+      var data = {};
+      fd.forEach(function(v,k){ data[k]=v; });
+
+      var currentPath = window.location.pathname;
+      try { var pg=new URLSearchParams(window.location.search).get('page'); if(pg) currentPath=pg; } catch(x){}
+
+      var wid = '627e2267-1336-4cda-9d04-478b6d8b58af';
+
+      var apiBase = (window.ZAPPY_API_BASE || 'https://api.zappy5.com').replace(/\/$/,'');
+      apiBase = apiBase + '/api/email/contact-form';
+
+      fetch(apiBase, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          websiteId: wid,
+          name: data.name || '',
+          email: data.email || '',
+          subject: data.subject || 'Contact Form Submission',
+          message: data.message || '',
+          phone: data.phone || null,
+          currentPagePath: currentPath
+        })
+      }).then(function(r){ return r.json(); }).then(function(result){
+        if (result.success) {
+          if (result.thankYouPagePath && result.ticketNumber) {
+            window.location.href = result.thankYouPagePath + '?ticket=' + encodeURIComponent(result.ticketNumber);
+            return;
+          }
+          showFormFeedback(form, result.message || 'Thank you! We will get back to you soon.', 'success');
+        } else {
+          showFormFeedback(form, result.error || 'Failed to send. Please try again.', 'error');
+        }
+      }).catch(function(){
+        showFormFeedback(form, 'Unable to send message right now. Please try again later.', 'error');
+      }).finally(function(){
+        form.__zappySubmitting = false;
+        form.submit = origSubmit;
+        if (btn) {
+          if (btn.tagName === 'INPUT') btn.value = origText;
+          else btn.textContent = origText;
+          btn.disabled = false;
+        }
+      });
+    }, true);
+  } catch (e) {}
+})();
+/* END ZAPPY_CONTACT_FORM_PREVENT_DEFAULT */
 
 
 /* ZAPPY_PUBLISHED_GRID_CENTERING */
