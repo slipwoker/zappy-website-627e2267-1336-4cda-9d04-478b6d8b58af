@@ -298,8 +298,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -313,13 +313,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
+            li:has(.menu-group-title):hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -328,7 +328,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -381,9 +381,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -421,8 +421,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -436,8 +436,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -478,18 +478,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -515,23 +515,23 @@
               }
               
               /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 flex: 1 !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -569,9 +569,9 @@
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
@@ -591,10 +591,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &gt; 768) {
+                if (window.innerWidth > 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -617,7 +617,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -677,7 +677,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -805,16 +805,16 @@
 
 <section class="video-content-section visible" dir="rtl" data-zappy-component="true" id="ai-section-1769420983149-ffc6rud-1769684871488-y8m0qm4mx-copy-1769703266492" style="opacity: 1;">
   <div class="video-content-container">
-    <div class="content-wrapper zappy-preserve-css-grid" style="display: grid; grid-template-columns: 482.6px 482.6px;" id="zappy-auto-grid-1772629884393-b7hkx3" data-zappy-auto-grid="true" data-zappy-grid-align="center" data-original-item-width="483" data-original-gap="50px"><div class="text-content">
-        <h2 class="section-title zappy-editable">גישה הוליסטית לטיפול בבעיות שתן ופרוסטטה</h2>
+    <div class="content-wrapper zappy-preserve-css-grid" style="display: grid; grid-template-columns: 482.6px 482.6px;" id="zappy-auto-grid-1772629884397-ocbxdw" data-zappy-auto-grid="true" data-zappy-grid-align="center" data-original-item-width="483" data-original-gap="50px"><div class="text-content">
+        <h2 class="section-title">ההתחלה והדרך שלי</h2>
         <div class="section-text">
-          <p class="zappy-editable" style="">בטיפול הוליסטי המטרה אינה להקל,<br>אלא <b>לאפשר לגוף לחזור לאיזון הטבעי</b> שלו.הטיפול אינו תרופת מדף, אלא בנוי&nbsp;מהקשבה ואבחון מדוייק לגוףהבנת הדפוס שהוביל לבעיההתאמת טיפול טבעי מדויקבניית יציבות לטווח ארוך.<br>הטיפול הוא קל לביצוע ואינו דורש שינויי הרגלים ואורח חיים.הטיפול אינו פולשני והצמחים אינם מרים או לא טעימים.</p>
+          <p class="" style="">שמי יהונתן שלונסקי,<br>מטפל ברפואה סינית ובגישות אלטרנטיביות, עם<b>התמקדות בבעיות פרוסטטה ודרכי השתן בגברים ובנשים.</b><br>לאורך השנים ליווית מאות גברים ונשים שהגיעו לאחר:<span>חוסר מענה מטיפולים תרופתיים</span><br><span>תופעות לוואי</span><br><span>המלצות ניתוח שלא הרגישו להם נכונות</span><br><span>ובעיות חמורות שצצו לאחר ניתוח.</span></p>
           
-          
+          <p class=""><b>נקודה בזמן - כי הבריאות שלכם חשובה.</b></p>
         </div>
       </div><div class="video-content">
-        <div class="video-wrapper loaded" data-element-type="video" data-element-id="video-1769703304205-t1mqq5bhf" style="max-width: 800px; margin: 20px auto; display: flex; justify-content: center; isolation: isolate;">
-          <iframe src="https://www.youtube.com/embed/VfLqYifTLoc" title="סרטון הסבר על טיפולים בפרוסטטה" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="">
+        <div class="video-wrapper" data-element-type="video" style="isolation: isolate;">
+          <iframe src="https://www.youtube.com/embed/6vKbCSKKRPA" title="סרטון הסבר על טיפולים בפרוסטטה" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
           </iframe>
         <div class="video-edit-overlay" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1; pointer-events: auto !important; cursor: pointer;" data-video-click-handler="true"></div></div>
       </div></div>
@@ -844,7 +844,7 @@
       <h2 class="main-heading-v1">שלבי הטיפול בקליניקה</h2>
       
       
-    <p id="element-saved-1770220284334-ugc2oya0s8e" class="text-base text-gray-700 leading-relaxed" style="color: #4A4A4A;" data-element-type="paragraph">&nbsp; בקליניקה, כל מטופל עובר תהליך מסודר:<br><br><br><br><br><br><br><br>- אבחון מעמיק של מערכת השתן והגוף כולו.<br><br><br><br><br><br><br><br>- התאמת טיפול הוליסטי אישי - צמחים, דיקור, תזונה ושיטות נוספות.<br><br><br><br><br><br><br><br>- מעקב צמוד לאורך זמן כדי לשפר את התוצאות ולהתאים את הטיפול לצרכים משתנים.&nbsp;&nbsp;</p></div>
+    <p id="element-saved-1770220284334-ugc2oya0s8e" class="text-base text-gray-700 leading-relaxed" style="color: #4A4A4A;" data-element-type="paragraph">&nbsp; בקליניקה, כל מטופל עובר תהליך מסודר:<br>- אבחון מעמיק של מערכת השתן והגוף כולו.<br>- התאמת טיפול הוליסטי אישי - צמחים, דיקור, תזונה ושיטות נוספות.<br>- מעקב צמוד לאורך זמן כדי לשפר את התוצאות ולהתאים את הטיפול לצרכים משתנים.&nbsp;&nbsp;</p></div>
   </div>
 </section>
 
@@ -885,7 +885,7 @@
       <h3 class="sub-heading-v1">
 
 המשימה שלי היא להביא את הרפואה ההוליסטית לקדמת הבמה, ולהציע פתרונות ייחודיים לבעיות פרוסטטה ושתן.</h3>
-      <p class="content-text-v1"><br><br><br><br><br><br><br><br>אני מאמין שטיפול נכון אינו מתייחס רק לסימפטום, אלא למכלול הגוף, ומאפשר שיקום בריאותי תוך התאמה אישית לכל מטופל.</p>
+      <p class="content-text-v1"><br><br>אני מאמין שטיפול נכון אינו מתייחס רק לסימפטום, אלא למכלול הגוף, ומאפשר שיקום בריאותי תוך התאמה אישית לכל מטופל.</p>
     </div>
   </div>
 </section>
