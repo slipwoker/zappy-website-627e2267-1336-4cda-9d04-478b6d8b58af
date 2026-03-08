@@ -819,16 +819,16 @@ img[data-no-hero-position] { position: static !important; }
       </div>
       
       <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
-        <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
-        <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display: none;">
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
           <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
         </svg>
       </button>
       
       <button class="phone-header-btn" aria-label="התקשר אלינו">
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
       </button>
@@ -925,23 +925,547 @@ img[data-no-hero-position] { position: static !important; }
 
 
   <!-- Intro Section -->
-  <section class="section" id="intro" style="background-color: #B7D5E1; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #B7D5E1" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#B7D5E1" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
-    <div class="container" style="position: relative; z-index: 2">
-      <div class="grid zappy-preserve-css-grid" style="display: grid; grid-template-columns: 654.4px 654.4px 0px 0px; gap: 40px;" id="zappy-auto-grid-1772975879869-hvwvl5" data-zappy-auto-grid="true" data-original-item-width="658" data-original-gap="32px"><article class="card" style="background-color: #ffffff !important; padding: 30px; border-radius: 8px; border-top: 4px solid #806060;">
-          <h2 style="color: rgb(48, 48, 48) !important; margin-bottom: 20px;" class="zappy-editable"><font color="#171799">מתי פונים לטיפול טבעי?</font></h2>
-          <ul style="list-style-type: none; padding: 0; color: #4a5568 !important;">
-            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;" class="zappy-editable"><span style="color: #806060 !important; margin-left: 10px;">✔</span>בעיות פרוסטטה ושתן הן מהבעיות הנפוצות ביותר אצל גברים החל מגיל הביניים ומעלה.<br>רבים סובלים מתכיפות במתן שתן, קימה בלילה, זרם חלש או תחושת התרוקנות לא מלאה.<br><br>הטיפול הרפואי המקובל מתמקד בדרך כלל בפרוסטטה עצמה.<br>אולם מניסיוני הקליני, במקרים רבים הפרוסטטה איננה מקור הבעיה - אלא ביטוי לחוסר איזון רחב יותר במערכת השתן.<br><br>מתוך הבנה זו פיתחתי את שיטת שלונסקי לאיזון מערכת השתן - גישה הוליסטית המתמקדת בשורש התפקודי של הבעיה ולא רק בהקלה על הסימפטומים.</li>
-            
-            
-            
+  <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: linear-gradient(135deg, var(--bg-light) 0%, #e8ecf1 100%); overflow: visible; padding: 120px 0 180px;" data-zappy-section="true" class="section">
+  <style>
+    .holistic-approach-section {
+      font-family: system-ui, sans-serif;
+      direction: rtl;
+      color: var(--text-color);
+    }
+
+    .approach-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .approach-hero {
+      text-align: center;
+      margin-bottom: 100px;
+      position: relative;
+    }
+
+    .approach-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent-color), #2980b9);
+      border-radius: 3px;
+    }
+
+    .approach-hero h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin: 0 0 30px;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .approach-hero .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    .main-intro-card {
+      background: var(--bg-white);
+      padding: 60px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(52, 152, 219, 0.1);
+    }
+
+    .main-intro-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent-color), #2980b9, var(--accent-color));
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 0%; }
+      50% { background-position: 100% 0%; }
+    }
+
+    .main-intro-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .main-intro-card li {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #2c3e50;
+      padding-right: 35px;
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .main-intro-card li::before {
+      content: '✔';
+      position: absolute;
+      right: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .two-column-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 100px;
+    }
+
+    .column-card {
+      background: var(--bg-white);
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+      border-right: 5px solid transparent;
+    }
+
+    .column-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 70px rgba(52, 152, 219, 0.15);
+      border-right-color: var(--accent-color);
+    }
+
+    .column-card h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin: 0 0 30px;
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .column-card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .deep-dive-section {
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(41, 128, 185, 0.08));
+      padding: 80px 60px;
+      border-radius: 30px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deep-dive-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.5;
+      animation: moveGrid 20s linear infinite;
+    }
+
+    @keyframes moveGrid {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    .deep-dive-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .deep-dive-section p {
+      font-size: 1.15rem;
+      line-height: 2;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .problem-item {
+      background: var(--bg-white);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--accent-color);
+    }
+
+    .problem-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .problem-item h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 15px;
+      color: var(--primary-color);
+    }
+
+    .problem-item p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0;
+      color: #555;
+    }
+
+    .mechanism-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin: 60px 0;
+    }
+
+    .mechanism-card {
+      background: var(--bg-white);
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .mechanism-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(52, 152, 219, 0.1), transparent);
+      border-radius: 50%;
+      transform: translate(40%, -40%);
+    }
+
+    .mechanism-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 25px 80px rgba(52, 152, 219, 0.15);
+    }
+
+    .mechanism-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 20px;
+      color: var(--accent-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .treatment-highlight {
+      background: linear-gradient(135deg, var(--primary-color), #34495e);
+      color: var(--light-text);
+      padding: 70px 60px;
+      border-radius: 30px;
+      text-align: center;
+      margin: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .treatment-highlight::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+      animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .treatment-highlight h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .treatment-highlight p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
+      margin: 60px 0;
+    }
+
+    .benefit-card {
+      background: var(--bg-white);
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: all 0.3s ease;
+      border-bottom: 4px solid transparent;
+    }
+
+    .benefit-card:hover {
+      border-bottom-color: var(--accent-color);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(52, 152, 219, 0.15);
+    }
+
+    .benefit-card::before {
+      content: '→';
+      display: block;
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .benefit-card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .final-summary {
+      background: var(--bg-white);
+      padding: 60px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      border-right: 8px solid var(--accent-color);
+      margin-top: 80px;
+    }
+
+    .final-summary h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      margin: 0 0 30px;
+      color: var(--primary-color);
+    }
+
+    .final-summary p {
+      font-size: 1.2rem;
+      line-height: 2;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .divider-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+      margin: 60px 0;
+    }
+
+    @media (max-width: 1024px) {
+      .two-column-section,
+      .mechanism-cards {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .holistic-approach-section {
+        padding-top: 100px;
+      }
+
+      .approach-container {
+        padding: 0 15px;
+      }
+
+      .main-intro-card,
+      .column-card,
+      .deep-dive-section,
+      .treatment-highlight,
+      .final-summary {
+        padding: 40px 30px;
+      }
+
+      .approach-hero {
+        margin-bottom: 60px;
+      }
+
+      .problem-list,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+  </style>
+
+  <div class="holistic-approach-section">
+    <div class="approach-container">
+      
+      <div class="approach-hero">
+        <h2>מתי פונים לטיפול טבעי?</h2>
+        <p class="subtitle">השיטה ההוליסטית שפיתחתי לטיפול בבעיות פרוסטטה ושתן</p>
+      </div>
+
+      <div class="content-grid">
+        <div class="main-intro-card">
+          <ul>
+            <li>בעיות פרוסטטה ושתן הן מהבעיות הנפוצות ביותר אצל גברים החל מגיל הביניים ומעלה.רבים סובלים מתכיפות במתן שתן, קימה בלילה, זרם חלש או תחושת התרוקנות לא מלאה.הטיפול הרפואי המקובל מתמקד בדרך כלל בפרוסטטה עצמה.אולם מניסיוני הקליני, במקרים רבים הפרוסטטה איננה מקור הבעיה - אלא ביטוי לחוסר איזון רחב יותר במערכת השתן.מתוך הבנה זו פיתחתי את שיטת שלונסקי לאיזון מערכת השתן - גישה הוליסטית המתמקדת בשורש התפקודי של הבעיה ולא רק בהקלה על הסימפטומים.</li>
           </ul>
-        </article><div class="intro-text">
-          <h2 style="color: rgb(48, 48, 48) !important; margin-bottom: 20px;" class="zappy-editable"><font color="#000080">הגישה שלי בנקודה בזמן</font></h2>
-          <p style="line-height: 1.6; margin-bottom: 20px; color: rgb(74, 85, 104) !important;" class="zappy-editable">השיטה ההוליסטית שפיתחתי לטיפול בבעיות פרוסטטה ושתן<br><br>הגישה המקובלת - והבעיות שבה<br><br>רוב הטיפולים הקיימים בבעיות פרוסטטה מתמקדים באיבר אחד בלבד - הערמונית.<br>הגישה הזו רואה את הגוף כאוסף חלקים נפרדים, ולכן הטיפול מתמקד בהשפעה מקומית על הפרוסטטה עצמה.<br><br>בפועל קיימות מספר בעיות מרכזיות בגישה הזו:<br><br>1. התייחסות לפרוסטטה כמקור הבעיה<br>ברוב המקרים מניחים שהפרוסטטה היא הגורם לסימפטומים של תכיפות, קימה בלילה או זרם שתן חלש.<br>אך פעמים רבות מדובר בסימפטום של חוסר איזון רחב יותר בגוף.<br><br>2. התרופות אינן מטפלות בשורש הבעיה<br>חלק מהתרופות אינן מקטינות באמת את הפרוסטטה אלא פועלות על ידי הרפיית שרירים באזור דרכי השתן.<br>המשמעות היא שהבעיה עצמה אינה נפתרת, אלא רק נעשית נסבלת יותר לזמן מסוים.<br><br>3. פגיעה בתפקודים אחרים בגוף<br>כיוון שהטיפול מתמקד במנגנון מקומי בלבד, לעיתים נוצרת פגיעה בתפקודים אחרים, כולל בתפקוד המיני.<br><br>4. התקדמות הבעיה לאורך זמן<br>כאשר לא מטפלים בשורש האמיתי של חוסר האיזון, התהליך יכול להמשיך להתפתח מתחת לפני השטח - ולעיתים להוביל לטיפולים פולשניים יותר כמו ניתוח.<br><br>⸻<br><br>הגישה ההוליסטית - הסתכלות על הגוף כמערכת אחת<br><br>בגישה ההוליסטית אינני מתייחס לפרוסטטה כאל מקור הבעיה, אלא אל תפקוד מערכת השתן כולה.<br><br>השתן הוא למעשה סימפטום חשוב.<br>הוא משמש מעין מדד שמאפשר לנו להבין האם הגוף חוזר לאיזון.<br><br>כאשר מטפלים בשורש הבעיה, הסימן הראשון לכך יהיה בדרך כלל שיפור ברור בתפקוד השתן.<br><br>⸻<br><br>שני הגורמים המרכזיים לבעיות שתן<br><br>מניסיוני הקליני, קיימים שני מנגנונים מרכזיים המשפיעים על תפקוד מערכת השתן.<br><br>1. מערכת הספיגה של הגוף<br><br>הגורם הראשון קשור ליכולת הגוף לספוג נוזלים דרך מערכת העיכול.<br><br>מערכת העיכול אינה אחראית רק על מזון - אלא גם על ספיגת נוזלים.<br>כאשר הספיגה אינה יעילה, חלק גדול מהנוזלים אינו נספג היטב בגוף ומגיע במהירות לשלפוחית השתן.<br><br>התוצאה יכולה להיות:<br>	-	תכיפות במתן שתן<br>	-	צורך להתרוקן לעיתים קרובות<br>	-	תחושת שלפוחית מלאה במהירות<br><br>כאשר משפרים את יכולת הספיגה של הגוף, לעיתים ניתן לראות ירידה משמעותית בתכיפות השתן.<br><br>⸻<br><br>2. מערכת הסירקולציה והזרימה<br><br>הגורם השני קשור ליכולת הגוף להניע זרימה תקינה של דם ונוזלים.<br><br>השתן הוא למעשה תוצר של סינון הדם.<br>כאשר הסירקולציה אינה יעילה מספיק, הדבר יכול להשפיע גם על עוצמת זרימת השתן.<br><br>במובן מסוים ניתן לדמות זאת לשני מנגנונים:<br>	-	מערכת הספיגה - ה"ברקס" שמאפשר להחזיק זמן רב יותר בין התרוקנויות<br>	-	מערכת הסירקולציה - ה"גז" שמאפשר זרימה חזקה ויעילה של השתן<br><br>כאשר שני המנגנונים הללו פועלים בצורה מאוזנת, תפקוד מערכת השתן משתפר באופן טבעי.<br><br>⸻<br><br>כיצד מתבצע הטיפול<br><br>הטיפול מבוסס על שילוב של:<br><br>דיקור סיני<br>ו־פורמולות צמחי מרפא ייחודיות.<br><br>הפורמולות בהן אני משתמש אינן מבוססות על מתכון מספרי לימוד קיימים.<br>הן פותחו לאורך שנים של ניסיון קליני, מתוך עבודה עם מטופלים והתאמה מדויקת למצבים השונים של מערכת השתן.<br><br>גם בטיפול בדיקור נעשה שימוש בגישה שנבנתה מתוך ניסיון מעשי, ולא לפי פרוטוקול קבוע.<br><br>לכן גם מטופלים שניסו טיפולים אחרים בעבר ולא חוו שיפור - אינם בהכרח יגיבו באותו אופן לטיפול בשיטה זו.<br><br>⸻<br><br>מתי מרגישים שינוי<br><br>ברוב המקרים הסימן הראשון לשיפור מופיע דרך השתן עצמו.<br><br>זה יכול להתבטא ב:<br>	-	פחות קימה בלילה<br>	-	זרם שתן חזק יותר<br>	-	ירידה בתכיפות<br>	-	תחושת התרוקנות טובה יותר<br><br>השינוי הראשוני מורגש בדרך כלל בין שבוע לחודש מתחילת הטיפול.<br><br>⸻<br><br>מעבר לפרוסטטה - השפעה על כלל הגוף<br><br>בעיות שתן מופיעות לרוב בתחילת גיל מבוגר יותר.<br>אך כאשר מתייחסים אל מערכת השתן כחלק ממערכת הגוף הכוללת, ניתן לראות שלשיפור האיזון יש לעיתים השפעה רחבה יותר.<br><br>כאשר הגוף חוזר לתפקוד מאוזן יותר, הדבר יכול להשפיע לטובה גם על תחושת החיוניות הכללית ואיכות החיים.<br><br>⸻<br><br>לסיכום<br><br>השיטה שפיתחתי אינה מתמקדת בפרוסטטה עצמה, אלא בתפקוד מערכת השתן והאיזון הכולל של הגוף.<br><br>במקום לנסות רק להקל על הסימפטומים, המטרה היא לעבוד עם מנגנוני הגוף עצמם -<br>ולאפשר להם לחזור לתפקוד יעיל ומאוזן יותר.</p>
+        </div>
+      </div>
+
+      <div class="two-column-section">
+        <div class="column-card">
+          <h2>הגישה שלי בנקודה בזמן</h2>
+          <p>הגישה ההוליסטית - הסתכלות על הגוף כמערכת אחתבגישה ההוליסטית אינני מתייחס לפרוסטטה כאל מקור הבעיה, אלא אל תפקוד מערכת השתן כולה.השתן הוא למעשה סימפטום חשוב.הוא משמש מעין מדד שמאפשר לנו להבין האם הגוף חוזר לאיזון.כאשר מטפלים בשורש הבעיה, הסימן הראשון לכך יהיה בדרך כלל שיפור ברור בתפקוד השתן.</p>
+        </div>
+
+        <div class="column-card">
+          <h2>מתי פונים לטיפול טבעי?</h2>
+          <p>הגישה המקובלת - והבעיות שבהרוב הטיפולים הקיימים בבעיות פרוסטטה מתמקדים באיבר אחד בלבד - הערמונית.הגישה הזו רואה את הגוף כאוסף חלקים נפרדים, ולכן הטיפול מתמקד בהשפעה מקומית על הפרוסטטה עצמה.</p>
+        </div>
+      </div>
+
+      <div class="deep-dive-section">
+        <div class="deep-dive-content">
+          <p>בפועל קיימות מספר בעיות מרכזיות בגישה הזו:</p>
           
-        </div></div>
+          <div class="problem-list">
+            <div class="problem-item">
+              <h3>1. התייחסות לפרוסטטה כמקור הבעיה</h3>
+              <p>ברוב המקרים מניחים שהפרוסטטה היא הגורם לסימפטומים של תכיפות, קימה בלילה או זרם שתן חלש.אך פעמים רבות מדובר בסימפטום של חוסר איזון רחב יותר בגוף.</p>
+            </div>
+
+            <div class="problem-item">
+              <h3>2. התרופות אינן מטפלות בשורש הבעיה</h3>
+              <p>חלק מהתרופות אינן מקטינות באמת את הפרוסטטה אלא פועלות על ידי הרפיית שרירים באזור דרכי השתן.המשמעות היא שהבעיה עצמה אינה נפתרת, אלא רק נעשית נסבלת יותר לזמן מסוים.</p>
+            </div>
+
+            <div class="problem-item">
+              <h3>3. פגיעה בתפקודים אחרים בגוף</h3>
+              <p>כיוון שהטיפול מתמקד במנגנון מקומי בלבד, לעיתים נוצרת פגיעה בתפקודים אחרים, כולל בתפקוד המיני.</p>
+            </div>
+
+            <div class="problem-item">
+              <h3>4. התקדמות הבעיה לאורך זמן</h3>
+              <p>כאשר לא מטפלים בשורש האמיתי של חוסר האיזון, התהליך יכול להמשיך להתפתח מתחת לפני השטח - ולעיתים להוביל לטיפולים פולשניים יותר כמו ניתוח.</p>
+            </div>
+          </div>
+
+          <div class="divider-line"></div>
+
+          <p>שני הגורמים המרכזיים לבעיות שתןמניסיוני הקליני, קיימים שני מנגנונים מרכזיים המשפיעים על תפקוד מערכת השתן.</p>
+
+          <div class="mechanism-cards">
+            <div class="mechanism-card">
+              <h3>1. מערכת הספיגה של הגוף</h3>
+              <p>הגורם הראשון קשור ליכולת הגוף לספוג נוזלים דרך מערכת העיכול.מערכת העיכול אינה אחראית רק על מזון - אלא גם על ספיגת נוזלים.כאשר הספיגה אינה יעילה, חלק גדול מהנוזלים אינו נספג היטב בגוף ומגיע במהירות לשלפוחית השתן.התוצאה יכולה להיות:	-	תכיפות במתן שתן	-	צורך להתרוקן לעיתים קרובות	-	תחושת שלפוחית מלאה במהירותכאשר משפרים את יכולת הספיגה של הגוף, לעיתים ניתן לראות ירידה משמעותית בתכיפות השתן.</p>
+            </div>
+
+            <div class="mechanism-card">
+              <h3>2. מערכת הסירקולציה והזרימה</h3>
+              <p>הגורם השני קשור ליכולת הגוף להניע זרימה תקינה של דם ונוזלים.השתן הוא למעשה תוצר של סינון הדם.כאשר הסירקולציה אינה יעילה מספיק, הדבר יכול להשפיע גם על עוצמת זרימת השתן.במובן מסוים ניתן לדמות זאת לשני מנגנונים:	-	מערכת הספיגה - ה"ברקס" שמאפשר להחזיק זמן רב יותר בין התרוקנויות	-	מערכת הסירקולציה - ה"גז" שמאפשר זרימה חזקה ויעילה של השתןכאשר שני המנגנונים הללו פועלים בצורה מאוזנת, תפקוד מערכת השתן משתפר באופן טבעי.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="treatment-highlight">
+        <h2>כיצד מתבצע הטיפול</h2>
+        <p>הטיפול מבוסס על שילוב של:דיקור סיניו־פורמולות צמחי מרפא ייחודיות.הפורמולות בהן אני משתמש אינן מבוססות על מתכון מספרי לימוד קיימים.הן פותחו לאורך שנים של ניסיון קליני, מתוך עבודה עם מטופלים והתאמה מדויקת למצבים השונים של מערכת השתן.גם בטיפול בדיקור נעשה שימוש בגישה שנבנתה מתוך ניסיון מעשי, ולא לפי פרוטוקול קבוע.לכן גם מטופלים שניסו טיפולים אחרים בעבר ולא חוו שיפור - אינם בהכרח יגיבו באותו אופן לטיפול בשיטה זו.</p>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; text-align: center; margin: 60px 0 40px; color: var(--primary-color);">מתי מרגישים שינוי</h2>
+      
+      <p style="font-size: 1.15rem; line-height: 1.9; text-align: center; max-width: 900px; margin: 0 auto 50px; color: #2c3e50;">ברוב המקרים הסימן הראשון לשיפור מופיע דרך השתן עצמו.זה יכול להתבטא ב:</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <p>פחות קימה בלילה</p>
+        </div>
+        <div class="benefit-card">
+          <p>זרם שתן חזק יותר</p>
+        </div>
+        <div class="benefit-card">
+          <p>ירידה בתכיפות</p>
+        </div>
+        <div class="benefit-card">
+          <p>תחושת התרוקנות טובה יותר</p>
+        </div>
+      </div>
+
+      <p style="font-size: 1.15rem; line-height: 1.9; text-align: center; max-width: 900px; margin: 40px auto 0; color: #2c3e50;">השינוי הראשוני מורגש בדרך כלל בין שבוע לחודש מתחילת הטיפול.</p>
+
+      <div class="divider-line"></div>
+
+      <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.08), rgba(41, 128, 185, 0.05)); padding: 60px 50px; border-radius: 25px; margin: 60px 0;">
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin: 0 0 25px; color: var(--primary-color); text-align: center;">מעבר לפרוסטטה - השפעה על כלל הגוף</h2>
+        <p style="font-size: 1.15rem; line-height: 2; margin: 0; color: #2c3e50;">בעיות שתן מופיעות לרוב בתחילת גיל מבוגר יותר.אך כאשר מתייחסים אל מערכת השתן כחלק ממערכת הגוף הכוללת, ניתן לראות שלשיפור האיזון יש לעיתים השפעה רחבה יותר.כאשר הגוף חוזר לתפקוד מאוזן יותר, הדבר יכול להשפיע לטובה גם על תחושת החיוניות הכללית ואיכות החיים.</p>
+      </div>
+
+      <div class="final-summary">
+        <h2>לסיכום</h2>
+        <p>השיטה שפיתחתי אינה מתמקדת בפרוסטטה עצמה, אלא בתפקוד מערכת השתן והאיזון הכולל של הגוף.במקום לנסות רק להקל על הסימפטומים, המטרה היא לעבוד עם מנגנוני הגוף עצמם -ולאפשר להם לחזור לתפקוד יעיל ומאוזן יותר.</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; pointer-events: none; z-index: 5;">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="display: block; width: 100%; height: 100%;">
+      <path d="M0,120 Q300,40 600,80 T1200,120 L1200,120 L0,120 Z" fill="#ffffff" opacity="0.9"></path>
+      <path d="M0,120 Q200,60 600,90 T1200,120 L1200,120 L0,120 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+</section>
 
   <!-- Symptoms Grid -->
   <section class="section" id="symptoms" style="background-color: #ece7a2; padding: 60px 0; direction: rtl; position: relative; overflow: hidden; --zappy-bg-color: #ece7a2" data-zappy-section="true" data-zappy-bg-type="color" data-zappy-bg-color="#ece7a2" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
@@ -1026,13 +1550,13 @@ img[data-no-hero-position] { position: static !important; }
     <div class="faq-grid zappy-vertical-grid zappy-preserve-css-grid" style="display: grid; gap: 16px; max-width: 800px; margin: 0px auto; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" data-zappy-auto-grid="true" data-original-item-width="392" data-original-gap="16px" id="zappy-auto-grid-1770558454619-c4d8hc"><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="" class=""><span class=""><span class=""><span style=""><h3 class="">&nbsp; האם הטיפול הטבעי בפרוסטטה עובד?&nbsp;&nbsp;</h3></span></span></span></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">עבור 80-90% מהגברים- כן.<br><br>כאשר התסמינים אינם מצב חירום כמו גידול סרטני המצריך טיפול קונבנציונאלי,<br><br>טיפול טבעי מאפשר לגוף לחזור לאיזון בהדרגה<br><br>ולהפחית תכיפות, קימה לילית וזרם שתן חלש.<br><br>ההצלחה תלויה בהתאמה אישית ובשיתוף פעולה של המטופל.&nbsp; &nbsp;</div>
       </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style=""><h3 class="">האם הטיפול בפרוסטטה מתאים למי שנוטל תרופות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">
           
@@ -1044,7 +1568,7 @@ img[data-no-hero-position] { position: static !important; }
       </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style=""><h3 class="">האם אפשר לטפל בפרוסטטה ולרדת מתרופות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 24px 20px; border-right: 3px solid #FFA500; padding-right: 21px; margin: 0 24px 20px; font-size: 16px; line-height: 1.7; color: #4A4A4A; opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">
           
@@ -1056,13 +1580,13 @@ img[data-no-hero-position] { position: static !important; }
       </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="cursor: text;"><h3 class="">האם הטיפול הטבעי יכול להחליף ניתוח?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">לרוב כן!<br><br>אך לא תמיד, ולא לכל אחד.<br><br>במקרים מסוימים הוא מהווה:<br><br>- חלופה לפני החלטה על ניתוח<br><br>- טיפול משלים<br><br>- דרך להפחתת תסמינים ולשיפור איכות החיים לאחר כשלון ניתוח&nbsp;&nbsp;</div>
       </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="cursor: text;"><h3 class="">כבר עשיתי ניתוח והמצב הורע -יש מה לעשות?</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">בהחלט כן- אל יאוש!<br><br>ניתן לראות לכך עדויות מצולמות בדף העדויות.<br><br>הרעה לאחר ניתוח ניתנת לשיפור!&nbsp;לגוף יכולות ריפוי מהירות יותר ממה שנדמה לנו.</div>
       </details><details style="border: 1px solid rgba(255, 165, 0, 0.19); border-radius: 8px;" class="">
@@ -1070,13 +1594,13 @@ img[data-no-hero-position] { position: static !important; }
           <span style=""><h3 class="">
 
 תוך כמה זמן רואים שינוי</h3></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">ישנם מטופלים שחווים שינוי כבר בשבוע הראשון שאחרי הטיפול,<br><br>ישנם כאלה שלוקח מעט יותר זמן,על פי רוב במהלך החודש הראשון נראה שינוי.</div>
       </details><details style="background-color: rgba(0, 0, 0, 0) !important;" class="" open="">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #FFA50008; font-size: 18px; font-weight: 600; color: #4A4A4A; font-family: system-ui, -apple-system, sans-serif;">
           <span style="cursor: text;" class=""><span class=""><span class=""><span><span><span>למי הטיפול פחות מתאים?</span></span></span></span></span></span>
-          <svg class="faq-chevron" width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M6 8l4 4 4-4" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </summary>
         <div style="padding: 16px 21px 20px 24px; border-right: 3px solid rgb(255, 165, 0); margin: 0px 24px 20px; font-size: 16px; line-height: 1.7; color: rgb(74, 74, 74); opacity: 0.85; font-family: system-ui, -apple-system, sans-serif;" class="">הטיפול אינו מיועד למצבי חירום רפואיים כגון סרטן,<br><br>הם כן מועילים כטיפול משלים במצבי סרטן -ויש לי בזה נסיון!אך לא כפתרון יחיד.</div>
       </details></div>
