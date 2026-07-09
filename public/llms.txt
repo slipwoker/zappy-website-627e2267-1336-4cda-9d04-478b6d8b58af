@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# נקודה בזמן — Generative Engine Optimization Map
+
+> A בריאות ורפואה business.
 
 ---
 
@@ -49,12 +51,42 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: mr.shlonski@gmail.com
+- Phone: 036206183
+- Phone (tel): tel:036206183
+- Address: מוזיר יעקב 5, תל אביב, תל אביב, תל אביב, תל אביב,
+
+### Contact form
+- URL: https://yonatan-shlonski.co.il/contact
+- Endpoint: https://yonatan-shlonski.co.il/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `phone` (tel, required)
+  - `email` (email, required)
+  - `message` (textarea)
+  - `consent` (checkbox, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://yonatan-shlonski.co.il/sitemap.xml
-- **Robots.txt**: https://yonatan-shlonski.co.il/robots.txt
+## About נקודה בזמן
+נקודה בזמן is a business in the בריאות ורפואה industry.
+
+## Target Audience
+אנשים עם בעיות פרוסטטה ובעיות שלפוחית
+
+## Industry
+בריאות ורפואה
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://yonatan-shlonski.co.il/sitemap.xml
+- Robots: https://yonatan-shlonski.co.il/robots.txt
+- Flattened page text (for LLMs): https://yonatan-shlonski.co.il/llms-full.txt
