@@ -4083,6 +4083,17 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   }
 }
 
+.reviews-section .reviews-stars-container .star.star-half {
+  background: linear-gradient(to right, #F1C40F 50%, #E0E0E0 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+/* zappy-self-heal */
+.reviews-section .reviews-stars-container .star.star-half { color: transparent !important; }
+
+
 /* zappy-nav-child-indent */
 .zappy-products-dropdown .zappy-nav-child > a,
 .sub-menu .zappy-nav-child > a {
