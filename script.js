@@ -1266,6 +1266,92 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/* Added Component Script */
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-copy-item');
+  const questionButtons = document.querySelectorAll('.faq-copy-question');
+  const copyButtons = document.querySelectorAll('.faq-copy-btn');
+
+  // Toggle FAQ items
+  questionButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const item = button.closest('.faq-copy-item');
+      const isActive = item.classList.contains('active');
+      const answerId = button.getAttribute('aria-controls');
+      const answer = document.getElementById(answerId);
+
+      // Close all items
+      faqItems.forEach(function(otherItem) {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          const otherButton = otherItem.querySelector('.faq-copy-question');
+          if (otherButton) {
+            otherButton.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle('active');
+      button.setAttribute('aria-expanded', !isActive);
+    });
+  });
+
+  // Copy functionality
+  copyButtons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const targetId = button.getAttribute('data-copy-target');
+      const targetElement = document.getElementById(targetId);
+      
+      if (!targetElement) return;
+
+      const answerText = targetElement.querySelector('p') ? targetElement.querySelector('p').textContent : targetElement.textContent;
+      const questionButton = document.getElementById(targetId.replace('answer', 'question'));
+      const questionText = questionButton ? questionButton.querySelector('.faq-copy-question-text').textContent : '';
+      
+      const fullText = questionText + '\n\n' + answerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(fullText).then(function() {
+          showCopiedState(button);
+        }).catch(function() {
+          fallbackCopy(fullText, button);
+        });
+      } else {
+        fallbackCopy(fullText, button);
+      }
+    });
+  });
+
+  function fallbackCopy(text, button) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      showCopiedState(button);
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+    document.body.removeChild(textarea);
+  }
+
+  function showCopiedState(button) {
+    const originalText = button.querySelector('span').textContent;
+    button.classList.add('copied');
+    button.querySelector('span').textContent = 'הועתק!';
+    
+    setTimeout(function() {
+      button.classList.remove('copied');
+      button.querySelector('span').textContent = originalText;
+    }, 2000);
+  }
+});
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
