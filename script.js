@@ -1352,6 +1352,86 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* ZAPPY_CUSTOM_JS_START:36ec7c8a35cc */
+(function () {
+  function __zappyCustomInit() {
+    try {
+(function () {
+  var section = document.querySelector('.home-copy-section');
+  if (!section) return;
+
+  var openBtn = section.querySelector('.home-copy-section-copy-btn');
+  var overlay = section.querySelector('.home-copy-section-modal-overlay');
+  var modal = section.querySelector('.home-copy-section-modal');
+  var closeBtn = section.querySelector('.home-copy-section-modal-close-btn');
+  var modalCopyBtn = section.querySelector('.home-copy-section-modal-copy-btn');
+  var textEl = modal ? modal.querySelector('p') : null;
+
+  function copyText() {
+    if (!textEl) return;
+    var txt = textEl.textContent.trim();
+    var done = function () {
+      if (modalCopyBtn) {
+        var span = modalCopyBtn.querySelector('span');
+        if (span) {
+          var orig = span.textContent;
+          span.textContent = 'הועתק!';
+          setTimeout(function () { span.textContent = orig; }, 1500);
+        }
+      }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function () {
+        legacyCopy(txt, done);
+      });
+    } else {
+      legacyCopy(txt, done);
+    }
+  }
+
+  function legacyCopy(txt, done) {
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    done();
+  }
+
+  if (openBtn && overlay) {
+    openBtn.addEventListener('click', function () {
+      overlay.classList.add('active');
+    });
+  }
+  if (closeBtn && overlay) {
+    closeBtn.addEventListener('click', function () {
+      overlay.classList.remove('active');
+    });
+  }
+  if (overlay) {
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) overlay.classList.remove('active');
+    });
+  }
+  if (modalCopyBtn) {
+    modalCopyBtn.addEventListener('click', copyText);
+  }
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:36ec7c8a35cc */
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
