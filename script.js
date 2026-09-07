@@ -1406,6 +1406,48 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* Added Component Script */
+document.addEventListener('DOMContentLoaded', function() {
+  const copyBtn = document.getElementById('copy-btn');
+  const copyText = document.getElementById('copy-text');
+  const copyFeedback = document.getElementById('copy-feedback');
+  
+  if (copyBtn && copyText) {
+    copyBtn.addEventListener('click', async function() {
+      const textToCopy = copyText.textContent.trim();
+      
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = textToCopy;
+          textArea.style.position = 'fixed';
+          textArea.style.opacity = '0';
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+        }
+        
+        // Show success feedback
+        if (copyFeedback) {
+          copyFeedback.classList.add('visible');
+          copyBtn.querySelector('span').textContent = 'הועתק!';
+          
+          setTimeout(function() {
+            copyFeedback.classList.remove('visible');
+            copyBtn.querySelector('span').textContent = 'העתיקו את התשובה';
+          }, 2500);
+        }
+      } catch (err) {
+        console.error('שגיאה בהעתקה:', err);
+      }
+    });
+  }
+});
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
