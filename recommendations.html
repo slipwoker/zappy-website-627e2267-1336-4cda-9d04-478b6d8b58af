@@ -391,10 +391,14 @@
     return 'zappy_purchase_fired_' + String(orderId || '');
   }
 
+  function purchaseMetaDedupKey(orderId) {
+    return 'zappy_purchase_meta_fired_' + String(orderId || '');
+  }
+
   function alreadyFiredPurchase(orderId) {
     if (!orderId) return false;
     try {
-      return sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
+      return window.sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
     } catch (e) {
       return false;
     }
@@ -402,8 +406,77 @@
 
   function markPurchaseFired(orderId) {
     if (!orderId) return;
-    try { sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
+    try { window.sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
   }
+
+  function alreadyFiredPurchaseMeta(orderId) {
+    if (!orderId) return false;
+    try {
+      return window.sessionStorage.getItem(purchaseMetaDedupKey(orderId)) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPurchaseMetaFired(orderId) {
+    if (!orderId) return;
+    try { window.sessionStorage.setItem(purchaseMetaDedupKey(orderId), '1'); } catch (e) {}
+  }
+
+  function getPendingMetaEvents() {
+    try {
+      if (!Array.isArray(window.__zappyPendingMetaEvents)) {
+        window.__zappyPendingMetaEvents = [];
+      }
+      return window.__zappyPendingMetaEvents;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function enqueueMetaEvent(eventName, params, orderId) {
+    var q = getPendingMetaEvents();
+    if (orderId) {
+      for (var i = 0; i < q.length; i++) {
+        if (q[i] && q[i].orderId === orderId && q[i].eventName === eventName) return;
+      }
+    }
+    q.push({ eventName: eventName, params: params || {}, orderId: orderId || null });
+  }
+
+  /**
+   * Live sites replace the eager Meta snippet with a consent-gated lazy
+   * loader. Payment providers bounce the shopper back to /order-success
+   * before CookieConsent hydrates, so confirm-order used to fire Purchase
+   * while window.fbq was still undefined — then sessionStorage blocked a
+   * retry. Queue until fbq exists, then flush.
+   */
+  function flushPendingMetaEvents() {
+    if (typeof window.fbq !== 'function') return;
+    var q = getPendingMetaEvents().slice();
+    try { window.__zappyPendingMetaEvents = []; } catch (e) {}
+    for (var i = 0; i < q.length; i++) {
+      var item = q[i];
+      if (!item || !item.eventName) continue;
+      if (item.orderId && alreadyFiredPurchaseMeta(item.orderId)) continue;
+      try {
+        window.fbq('track', item.eventName, item.params || {});
+        if (item.orderId) markPurchaseMetaFired(item.orderId);
+      } catch (e2) {}
+    }
+  }
+  window.zappyFlushPendingMetaEvents = flushPendingMetaEvents;
+
+  var metaFlushAttempts = 0;
+  var metaFlushTimer = setInterval(function() {
+    metaFlushAttempts++;
+    flushPendingMetaEvents();
+    var pendingLen = 0;
+    try { pendingLen = (window.__zappyPendingMetaEvents || []).length; } catch (e) {}
+    if ((pendingLen === 0 && typeof window.fbq === 'function') || metaFlushAttempts > 60) {
+      clearInterval(metaFlushTimer);
+    }
+  }, 500);
 
   /**
    * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
@@ -423,15 +496,19 @@
         metadata.pagePath = pagePath();
       }
 
+      var oid = '';
+      var purchaseAlreadySent = false;
+      var purchaseMetaAlreadySent = false;
       if (eventId === 'checkout_complete') {
-        var oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
-        if (oid && alreadyFiredPurchase(oid)) return;
-        if (oid) markPurchaseFired(oid);
+        oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
+        purchaseAlreadySent = !!(oid && alreadyFiredPurchase(oid));
+        purchaseMetaAlreadySent = !!(oid && alreadyFiredPurchaseMeta(oid));
+        if (purchaseAlreadySent && purchaseMetaAlreadySent) return;
       }
 
       // First-party (skip when already tracked via zappyTrackEcomAnalytics path
       // that opts out, or when caller already recorded under a different name)
-      if (!opts.skipFirstParty) {
+      if (!opts.skipFirstParty && !purchaseAlreadySent) {
         try {
           if (window.zappyAnalytics && typeof window.zappyAnalytics.track === 'function') {
             window.zappyAnalytics.track(eventId, metadata);
@@ -440,40 +517,53 @@
       }
 
       // GTM / dataLayer — platform-standard ecommerce event names
-      try {
-        window.dataLayer = window.dataLayer || [];
-        if (plat.ecom) {
-          var ga4ForGtm = buildGa4Params(eventId, metadata);
-          var ecommerce = {};
-          if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
-          if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
-          if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
-          if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
-          window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
-          // Secondary Zappy-specific trigger for merchants who want it
-          if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
-            window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+      if (!purchaseAlreadySent) {
+        try {
+          window.dataLayer = window.dataLayer || [];
+          if (plat.ecom) {
+            var ga4ForGtm = buildGa4Params(eventId, metadata);
+            var ecommerce = {};
+            if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
+            if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
+            if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
+            if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+            window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
+            // Secondary Zappy-specific trigger for merchants who want it
+            if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+              window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+            }
+          } else {
+            var dl = { event: plat.gtm };
+            for (var k in metadata) {
+              if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+            }
+            window.dataLayer.push(dl);
           }
+        } catch (e2) {}
+
+        // GA4 gtag
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
+          }
+        } catch (e3) {}
+
+        if (oid) markPurchaseFired(oid);
+      }
+
+      // Meta Pixel — live sites lazy-load fbq after marketing consent. If the
+      // stub is not defined yet, queue and flush when the pixel arrives.
+      try {
+        if (purchaseMetaAlreadySent) {
+          // already delivered to Meta
         } else {
-          var dl = { event: plat.gtm };
-          for (var k in metadata) {
-            if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+          var metaParams = buildMetaParams(eventId, metadata);
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', plat.meta, metaParams);
+            if (oid) markPurchaseMetaFired(oid);
+          } else {
+            enqueueMetaEvent(plat.meta, metaParams, eventId === 'checkout_complete' ? oid : null);
           }
-          window.dataLayer.push(dl);
-        }
-      } catch (e2) {}
-
-      // GA4 gtag
-      try {
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
-        }
-      } catch (e3) {}
-
-      // Meta Pixel (only when fbq is loaded — consent-gated lazy loader)
-      try {
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', plat.meta, buildMetaParams(eventId, metadata));
         }
       } catch (e4) {}
     } catch (err) {}
@@ -1220,53 +1310,53 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       <div style="background-color: rgba(0, 0, 0, 0) !important; grid-area: auto !important;" data-grid-item-index="0">
         <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1784894543511-0-fbkk10ui0" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe-add-1769619425365-cbgxt3-add-1769619511622-0258b6-add-1784894543511-oi12nz" data-video-editable="true"><iframe src="https://www.youtube.com/embed/tMDZQYCHXqc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div><div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="1">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619511622-0-i9vycjbye" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe-add-1769619425365-cbgxt3-add-1769619511622-0258b6" data-video-editable="true"><iframe src="https://www.youtube.com/embed/cfL-tDieg8s" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619511622-0-i9vycjbye" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe-add-1769619425365-cbgxt3-add-1769619511622-0258b6" data-video-editable="true"><iframe src="https://www.youtube.com/embed/cfL-tDieg8s" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="2">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619425366-0-safwlbn5n" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe-add-1769619425365-cbgxt3" data-video-editable="true"><iframe src="https://www.youtube.com/embed/4AcMhkxXu_U" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619425366-0-safwlbn5n" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe-add-1769619425365-cbgxt3" data-video-editable="true"><iframe src="https://www.youtube.com/embed/4AcMhkxXu_U" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="3">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619388179-0-cg05z4kbg" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe" data-video-editable="true"><iframe src="https://www.youtube.com/embed/eODRZGN7jhs" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619388179-0-cg05z4kbg" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu-add-1769619388178-se4rwe" data-video-editable="true"><iframe src="https://www.youtube.com/embed/eODRZGN7jhs" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="4">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619362736-0-jhzygyi0p" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu" data-video-editable="true"><iframe src="https://www.youtube.com/embed/Y0_khR5sU-U" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619362736-0-jhzygyi0p" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner-add-1769619362736-vf7ieu" data-video-editable="true"><iframe src="https://www.youtube.com/embed/Y0_khR5sU-U" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="5">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-sd7sf8lzo" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/jp-A0XsgU14" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-sd7sf8lzo" data-placeholder="video-placeholder" id="zappy-element-1769619275801-sd7sf8lzo-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/jp-A0XsgU14" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="6">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-eaulqkq3u" data-placeholder="video-placeholder" id="zappy-element-1769619275801-eaulqkq3u-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/JjE6FBGe4yk" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-eaulqkq3u" data-placeholder="video-placeholder" id="zappy-element-1769619275801-eaulqkq3u-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/JjE6FBGe4yk" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="7">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-tbuzvnoaw" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/vTXEhN81p1A" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="zappy-element-1769619275801-tbuzvnoaw" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner" data-video-editable="true"><iframe src="https://www.youtube.com/embed/vTXEhN81p1A" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="8">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619445021-0-x595q59gw" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3" data-video-editable="true"><iframe src="https://www.youtube.com/embed/CYHeVOCkhTA" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619445021-0-x595q59gw" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3" data-video-editable="true"><iframe src="https://www.youtube.com/embed/CYHeVOCkhTA" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="9">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619461091-0-x19nxu3tv" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz" data-video-editable="true"><iframe src="https://www.youtube.com/embed/uTVtA-7UGEM" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619461091-0-x19nxu3tv" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz" data-video-editable="true"><iframe src="https://www.youtube.com/embed/uTVtA-7UGEM" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="10">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619529147-0-iwtrn88nx" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44" data-video-editable="true"><iframe src="https://www.youtube.com/embed/kzEcdm4MfHs" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619529147-0-iwtrn88nx" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44" data-video-editable="true"><iframe src="https://www.youtube.com/embed/kzEcdm4MfHs" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="11">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619535865-0-1unvwkzft" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44-add-1769619535865-wbx245" data-video-editable="true"><iframe src="https://www.youtube.com/embed/CAuFDB6L2JU" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619535865-0-1unvwkzft" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44-add-1769619535865-wbx245" data-video-editable="true"><iframe src="https://www.youtube.com/embed/CAuFDB6L2JU" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
       <div style="width: 100%; max-width: 350px; display: block; margin-left: auto; margin-right: auto;" data-grid-item-index="12">
-        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619553123-0-dwisz6amh" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44-add-1769619535865-wbx245-add-1769619553123-oczstu" data-video-editable="true"><iframe src="https://www.youtube.com/embed/GnA1Feu-5j0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+        <div class="video-placeholder" style="position: relative; width: 100%; max-width: 800px; height: 0px; padding-bottom: 56.25%; background: rgb(0, 0, 0); border-radius: 8px; overflow: hidden;" data-element-type="video" data-element-id="new-grid-video-1769619553123-0-dwisz6amh" data-placeholder="video-placeholder" id="zappy-element-1769619275801-tbuzvnoaw-inner-add-1769619445021-rpfhl3-add-1769619461091-kpj6tz-add-1769619529146-pr8b44-add-1769619535865-wbx245-add-1769619553123-oczstu" data-video-editable="true"><iframe src="https://www.youtube.com/embed/GnA1Feu-5j0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
       </div>
     
   </div><p class="zappy-editable"><a href="https://yonatan-shlonski.co.il/contact" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; background-color: rgb(255, 165, 0) !important; border-color: rgb(255, 165, 0) !important; border-style: solid; border-width: 2px; border-image: initial; color: var(--light-text, #ffffff) !important; width: auto !important; flex: 0 0 auto !important; outline: none;" data-element-type="button" data-text-color="light" data-element-id="zappy-element-1770565042089-np4dgqtdg" id="zappy-element-1770565042089-np4dgqtdg" target="_blank" rel="noopener noreferrer">לחץ כאן</a>
