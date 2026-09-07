@@ -1352,6 +1352,60 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* Added Component Script */
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.getElementById('copy-button');
+  const copyText = document.getElementById('copy-text');
+  const copySuccess = document.getElementById('copy-success');
+  const buttonText = copyButton.querySelector('.copy-button-text');
+
+  if (copyButton && copyText) {
+    copyButton.addEventListener('click', async function() {
+      try {
+        await navigator.clipboard.writeText(copyText.textContent.trim());
+        
+        // Show success message
+        if (copySuccess) {
+          copySuccess.classList.add('show');
+        }
+        
+        // Change button text temporarily
+        if (buttonText) {
+          const originalText = buttonText.textContent;
+          buttonText.textContent = 'הועתק!';
+          
+          setTimeout(() => {
+            buttonText.textContent = originalText;
+            if (copySuccess) {
+              copySuccess.classList.remove('show');
+            }
+          }, 2000);
+        }
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = copyText.textContent.trim();
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          if (copySuccess) {
+            copySuccess.classList.add('show');
+            setTimeout(() => {
+              copySuccess.classList.remove('show');
+            }, 2000);
+          }
+        } catch (e) {
+          console.error('Failed to copy text: ', e);
+        }
+        document.body.removeChild(textArea);
+      }
+    });
+  }
+});
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
